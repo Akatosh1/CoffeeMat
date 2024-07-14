@@ -19,7 +19,7 @@ namespace CoffeeMat.Classes.Commands
 
         public string GetDescription()
         {
-            return "Добавляет добавку к кофе";
+            return Locales.phrases[Locales.CurrentLocale]["AddInCoffeeCommandDescription"];
         }
     }
 }

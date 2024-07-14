@@ -130,10 +130,10 @@ namespace CoffeeMat.Classes
 
             if (command.ExecuteNonQuery() == 0)
             {
-                return "Не удалось выполнить заказ";
+                return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
             }
             dataBase.CloseConnection();
-            return "Спасибо за покупку!";
+            return Order.CreateOrderString();
         }
 
         public string UpdateOnResource(string resourceName, int resourceChangeAmount)
@@ -155,11 +155,11 @@ namespace CoffeeMat.Classes
                 var newAmount = oldAmount + resourceChangeAmount;
                 reader.Close();
                 if (newAmount < 0) return $"Ресурс '{resourceName}' закончился";
-                if (command.ExecuteNonQuery() == 0) return "Неверный запрос";
+                if (command.ExecuteNonQuery() == 0) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
                 dataBase.CloseConnection();
-                return $"Количество '{resourceName}' '{newAmount}'";
+                return Order.Coffee != null ? Order.CreateOrderString(): $"Количество '{resourceName}' '{newAmount}'";
             }
-            else return "Неверный запрос";
+            else return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
         }
 
         public void AddFullItems()

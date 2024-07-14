@@ -13,17 +13,18 @@ namespace CoffeeMat.Classes.Commands
             if (int.TryParse(args[0],out int arg))
             {
                 Order.CoffeeMachineBalance += arg;
-                return $"Баланс '{Order.CoffeeMachineBalance}'";
+
+                return string.Format(Locales.phrases[Locales.CurrentLocale]["Balance"], Order.CoffeeMachineBalance);
             }
             else
             {
-                return "Некорректная команда";
+                return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
             }
         }
 
         public string GetDescription()
         {
-            return "Вносит деньги в автомат";
+            return Locales.phrases[Locales.CurrentLocale]["AddMoneyCommandDescription"];
         }
     }
 }

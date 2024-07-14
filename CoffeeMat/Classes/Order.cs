@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CoffeeMat.Classes;
 
 namespace CoffeeMat
 {
@@ -13,11 +14,21 @@ namespace CoffeeMat
     {
         public static Coffee Coffee = null;
         public static int CoffeeMachineBalance = 0;
+        public static int ExtraMilkAmount = 0;
+        public static int ExtraSugarAmount = 0;
         public static HashSet<int> ValidMoneyAmounts = new HashSet<int>();
 
         public static void IncreaseBalance(int amount)
         {
             if (ValidMoneyAmounts.Contains(amount)) CoffeeMachineBalance += amount; 
+        }
+
+        public static string CreateOrderString()
+        {
+            return string.Format("{0} {1} {2} ",
+                string.Format(Locales.phrases[Locales.CurrentLocale]["Order"], Coffee.Name), 
+                ExtraSugarAmount > 0 ? Locales.phrases[Locales.CurrentLocale]["ExtraSugar"] : "",
+                ExtraMilkAmount > 0 ? Locales.phrases[Locales.CurrentLocale]["ExtraMilk"] : "");
         }
 
         public static void Clear(int decreasedBalance)

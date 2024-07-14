@@ -19,15 +19,17 @@ namespace CoffeeMat.Classes.Commands
             foreach(Coffee coffee in coffeeList)
             {
                 stringBuilder.Append(coffee.Name);
-                stringBuilder.Append("  цена:");
-                stringBuilder.AppendLine(coffee.Amount.ToString());
+                stringBuilder.Append(Locales.phrases[Locales.CurrentLocale]["Price"]);
+                stringBuilder.Append(coffee.Amount.ToString());
+                stringBuilder.Append(" ");
+                stringBuilder.AppendLine(Locales.phrases[Locales.CurrentLocale]["Rubles"]);
             }
             return stringBuilder.ToString();
         }
 
         public string GetDescription()
         {
-            return "Показывает список доступных видов кофе";
+            return Locales.phrases[Locales.CurrentLocale]["CoffeeListCommandDescription"];
         }
     }
 }

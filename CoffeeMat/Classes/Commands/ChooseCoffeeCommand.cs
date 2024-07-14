@@ -10,15 +10,15 @@ namespace CoffeeMat.Classes.Commands
     {
         public string Execute(string[] args)
         {
-            if (args == null) return "Не введено название кофе";
+            if (args == null) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
             var dataBaseDAO = new DataBaseDao();
             Order.Coffee = dataBaseDAO.GetCoffeeFromSql(args[0]);
-            return $"Ваш заказ {args[0]}";
+            return Order.CreateOrderString();
         }
 
         public string GetDescription()
         {
-            return "Делает выбор кофе в заказе";
+            return Locales.phrases[Locales.CurrentLocale]["ChooseCoffeeCommandDescription"];
         }
     }
 }
