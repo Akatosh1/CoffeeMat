@@ -26,6 +26,7 @@ namespace CoffeeMat.Classes
             rusDictionary.Add("OrderNotFormed", "Заказ не сформирован");
             rusDictionary.Add("ResourceAmount", "Количество {0} {1} у.е");
             rusDictionary.Add("OutOfResource", "Ресурс {0} закончился");
+            rusDictionary.Add("NoMoney", "Такая валюта не принимается");
 
             rusDictionary.Add("LocalesCommandDescription", "Меняет текущую локализацию");
             rusDictionary.Add("AddInCoffeeCommandDescription", "Добавляет добавку к кофе");
@@ -54,6 +55,7 @@ namespace CoffeeMat.Classes
             engDictionary.Add("OrderNotFormed", "Order not formed");
             engDictionary.Add("ResourceAmount", "Amount of {0} {1} units");
             engDictionary.Add("OutOfResource", "Out of resource {0}");
+            engDictionary.Add("NoMoney", "Such currency is not accepted");
 
 
             engDictionary.Add("LocalesCommandDescription", "Change current locales");

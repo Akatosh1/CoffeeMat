@@ -175,7 +175,7 @@ namespace CoffeeMat.Classes
                     }
                     return Order.CreateOrderString();
                 }
-                else return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+                else return Locales.phrases[Locales.CurrentLocale]["OrderNotFormed"];
             }
             else return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
         }

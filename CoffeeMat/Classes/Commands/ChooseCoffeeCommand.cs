@@ -12,8 +12,17 @@ namespace CoffeeMat.Classes.Commands
         {
             if (args == null) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
             var dataBaseDAO = new DataBaseDao();
-            Order.Coffee = dataBaseDAO.GetCoffeeFromSql(args[0]);
-            return Order.CreateOrderString();
+            var coffee = dataBaseDAO.GetCoffeeFromSql(args[0]);
+            var difference = Order.CoffeeMachineBalance - coffee.Amount;
+            if (difference >= 0)
+            {
+                Order.Coffee = coffee;
+                return Order.CreateOrderString();
+            }
+            else return string.Format(
+                Locales.phrases[Locales.CurrentLocale]["NotEnoughMoney"],
+                -difference,
+                Locales.phrases[Locales.CurrentLocale]["Rubles"]);
         }
 
         public string GetDescription()

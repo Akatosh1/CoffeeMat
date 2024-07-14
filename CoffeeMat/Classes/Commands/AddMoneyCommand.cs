@@ -12,8 +12,9 @@ namespace CoffeeMat.Classes.Commands
         {         
             if (int.TryParse(args[0],out int arg))
             {
-                Order.CoffeeMachineBalance += arg;
+                if (!Order.ValidMoneyAmounts.Contains(arg)) return Locales.phrases[Locales.CurrentLocale]["NoMoney"];
 
+                Order.CoffeeMachineBalance += arg;
                 return string.Format(Locales.phrases[Locales.CurrentLocale]["Balance"], Order.CoffeeMachineBalance);
             }
             else
