@@ -161,5 +161,28 @@ namespace CoffeeMat.Classes
             }
             else return "Неверный запрос";
         }
+
+        public void AddFullItems()
+        {
+            new Coffee("Americano", 10, Properties.Resources.американо, 1, 2, 0).AddToBase();
+            new Coffee("Cappucino", 15, Properties.Resources.капучино, 1, 1, 1).AddToBase();
+            new Coffee("Latte", 25, Properties.Resources.Латте, 1, 1, 2).AddToBase();
+            new Coffee("Espresso", 20, Properties.Resources.эспрессо, 1, 1, 0).AddToBase();
+            new Money("1 ruble", 1, Properties.Resources._1рубль_монета).AddToBase();
+            new Money("2 rubles", 2, Properties.Resources._2_рублямонета).AddToBase();
+            new Money("5 rubles", 5, Properties.Resources._5_рублей_монета).AddToBase();
+            new Money("10 rubles", 10, Properties.Resources._10_рублей_монета).AddToBase();
+            new Money("10 rubles", 10, Properties.Resources._10_рублей_купюра).AddToBase();
+            new Money("50 rubles", 50, Properties.Resources._50_рублей_купюра).AddToBase();
+            new Money("100 rubles", 100, Properties.Resources._100_рублей_купюра).AddToBase();
+            new Money("200 rubles", 200, Properties.Resources._200_рублей_купюра).AddToBase();
+            new Resource("sugar", 1000, Properties.Resources.сахар).AddToBase();
+            new Resource("milk", 1000, Properties.Resources.молоко).AddToBase();
+            new Resource("BlendedCoffee", 1000, Properties.Resources.кофейные_зерна).AddToBase();
+            new Resource("plasticCups", 1000, Properties.Resources.кофе).AddToBase();
+            new Resource("water", 1000, Properties.Resources.вода).AddToBase();
+        }
+
+        
     }
 }

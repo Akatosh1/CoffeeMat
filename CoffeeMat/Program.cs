@@ -1,4 +1,5 @@
-﻿using CoffeeMat.Forms;
+﻿using CoffeeMat.Classes;
+using CoffeeMat.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace CoffeeMat
         [STAThread]
         static void Main()
         {
+            var dataBaseDao = new DataBaseDao();
+            dataBaseDao.AddFullItems();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new StartScreen());

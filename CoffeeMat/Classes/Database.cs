@@ -9,7 +9,8 @@ namespace CoffeeMat
 {
     internal class Database
     {
-        readonly SqlConnection sqlConnection = new SqlConnection(@"Data Source=DESKTOP-6934O1D;Initial Catalog=CoffeeBase; Integrated Security=True");
+        public static string connec = Properties.Settings.Default.Database1ConnectionString;
+        readonly SqlConnection sqlConnection = new SqlConnection(connec);
 
         public void OpenConnection()
         {

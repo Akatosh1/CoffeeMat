@@ -117,4 +117,56 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="_100_рублей_купюра" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\100 рублей купюра.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10_рублей_купюра" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\10 рублей купюра.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10_рублей_монета" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\10 рублей монета.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1рубль_монета" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\1рубль монета.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_200_рублей_купюра" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\200 рублей купюра.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2_рублямонета" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\2-рублямонета.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_50_рублей_купюра" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\50 рублей купюра.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5_рублей_монета" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\5 рублей монета.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="американо" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\американо.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="вода" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\вода.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="капучино" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\капучино.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="кофе" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\кофе.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="кофейные_зерна" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\кофейные зерна.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Латте" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Латте.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="молоко" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\молоко.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="сахар" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\сахар.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="эспрессо" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\эспрессо.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

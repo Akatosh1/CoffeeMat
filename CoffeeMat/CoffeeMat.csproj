@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -81,6 +81,11 @@
     <Compile Include="Classes\IItem.cs" />
     <Compile Include="Classes\Money.cs" />
     <Compile Include="Classes\Resource.cs" />
+    <Compile Include="Database1DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddExtrasForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +167,17 @@
     <EmbeddedResource Include="Forms\StartScreen.resx">
       <DependentUpon>StartScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Database1DataSet.xsc">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet.xss">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -182,7 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LocalDataBase\" />
-    <Folder Include="Resources\Images\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -195,6 +210,32 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database1_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
+    <Content Include="Resources\Images\10 рублей купюра.jpg" />
+    <Content Include="Resources\Images\10 рублей монета.jpg" />
+    <Content Include="Resources\Images\100 рублей купюра.jpg" />
+    <Content Include="Resources\Images\1рубль монета.png" />
+    <Content Include="Resources\Images\2-рублямонета.png" />
+    <Content Include="Resources\Images\200 рублей купюра.png" />
+    <Content Include="Resources\Images\5 рублей монета.jpg" />
+    <Content Include="Resources\Images\50 рублей купюра.jpg" />
+    <Content Include="Resources\Images\американо.png" />
+    <Content Include="Resources\Images\вода.png" />
+    <Content Include="Resources\Images\капучино.png" />
+    <Content Include="Resources\Images\кофе.png" />
+    <Content Include="Resources\Images\кофейные зерна.png" />
+    <Content Include="Resources\Images\Латте.png" />
+    <Content Include="Resources\Images\молоко.png" />
+    <Content Include="Resources\Images\сахар.png" />
+    <Content Include="Resources\Images\эспрессо.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
