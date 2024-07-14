@@ -12,14 +12,14 @@ namespace CoffeeMat.Classes.Commands
     {
         public string Execute(string[] args)
         {
-            if (!int.TryParse(args[1], out int amount)) return "Некорректный запрос";
+            if (!int.TryParse(args[1], out int amount)) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
             var dataBaseDao = new DataBaseDao();
-            return dataBaseDao.UpdateOnResource(args[0], amount);
+            return dataBaseDao.UpdateResourceOnStorage(args[0], amount);
         }
 
         public string GetDescription()
         {
-            return "Пополняет один из ресурсов на введённое количество у.е";
+            return Locales.phrases[Locales.CurrentLocale]["FillResourceCommandDescription"];
         }
     }
 }

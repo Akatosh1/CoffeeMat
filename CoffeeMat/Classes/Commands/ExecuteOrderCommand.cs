@@ -10,16 +10,19 @@ namespace CoffeeMat.Classes.Commands
     {
         public string Execute(string[] args)
         {
-            if (Order.Coffee == null) return "Заказ не сформирован";
+            if (Order.Coffee == null) return Locales.phrases[Locales.CurrentLocale]["OrderNotFormed"];
             var dataBaseDao = new DataBaseDao();
             var difference = Order.CoffeeMachineBalance - Order.Coffee.Amount;
             if (difference >= 0) return dataBaseDao.UpdateOnOrder();
-            else return $"Не хватает {difference} рублей";
+            else return string.Format(
+                Locales.phrases[Locales.CurrentLocale]["NotEnoughMoney"], 
+                -difference,
+                Locales.phrases[Locales.CurrentLocale]["Rubles"]);
         }
 
         public string GetDescription()
         {
-            return "Делает заказ";
+            return Locales.phrases[Locales.CurrentLocale]["ExecuteCommandDescription"];
         }
     }
 }

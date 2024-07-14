@@ -22,16 +22,20 @@ namespace CoffeeMat.Classes
             rusDictionary.Add("ExtraMilk", "плюс {0} молоко");
             rusDictionary.Add("Price", " цена:");
             rusDictionary.Add("Rubles", "рублей");
+            rusDictionary.Add("NotEnoughMoney", "Не хватает {0} {1}");
+            rusDictionary.Add("OrderNotFormed", "Заказ не сформирован");
+            rusDictionary.Add("ResourceAmount", "Количество {0} {1} у.е");
+            rusDictionary.Add("OutOfResource", "Ресурс {0} закончился");
 
             rusDictionary.Add("LocalesCommandDescription", "Меняет текущую локализацию");
             rusDictionary.Add("AddInCoffeeCommandDescription", "Добавляет добавку к кофе");
             rusDictionary.Add("AddMoneyCommandDescription", "Вносит деньги в автомат");
             rusDictionary.Add("ChooseCoffeeCommandDescription", "Делает выбор кофе в заказе");
             rusDictionary.Add("CoffeeListCommandDescription", "Показывает список доступных видов кофе");
-            rusDictionary.Add("ExecuteCommandDescription", "");
-            rusDictionary.Add("FillResourceCommandDescription", "");
-            rusDictionary.Add("HelpCommandDescription", "");
-            rusDictionary.Add("ResourceAmountOnCommandDescription", "");
+            rusDictionary.Add("ExecuteCommandDescription", "Создает заказ");
+            rusDictionary.Add("FillResourceCommandDescription", "Пополняет один из ресурсов на введённое количество у.е");
+            rusDictionary.Add("HelpCommandDescription", "Показывает список доступных команд");
+            rusDictionary.Add("ResourceAmountOnCommandDescription", "Показывает кол-во выбранного ресурса");
             return rusDictionary;
         }
 
@@ -46,6 +50,10 @@ namespace CoffeeMat.Classes
             engDictionary.Add("ExtraMilk", "plus {0} milk");
             engDictionary.Add("Price", " price:");
             engDictionary.Add("Rubles", "rubles");
+            engDictionary.Add("NotEnoughMoney", "{0} {1} are missing");
+            engDictionary.Add("OrderNotFormed", "Order not formed");
+            engDictionary.Add("ResourceAmount", "Amount of {0} {1} units");
+            engDictionary.Add("OutOfResource", "Out of resource {0}");
 
 
             engDictionary.Add("LocalesCommandDescription", "Change current locales");
@@ -53,10 +61,10 @@ namespace CoffeeMat.Classes
             engDictionary.Add("AddMoneyCommandDescription", "Increase amount of money");
             engDictionary.Add("ChooseCoffeeCommandDescription", "Make choice of coffee in order");
             engDictionary.Add("CoffeeListCommandDescription", "Show all coffee choices");
-            engDictionary.Add("ExecuteCommandDescription", "");
-            engDictionary.Add("FillResourceCommandDescription", "");
-            engDictionary.Add("HelpCommandDescription", "");
-            engDictionary.Add("ResourceAmountOnCommandDescription", "");
+            engDictionary.Add("ExecuteCommandDescription", "Create order");
+            engDictionary.Add("FillResourceCommandDescription", "Fill resource with the entered amount of units");
+            engDictionary.Add("HelpCommandDescription", "Show list of available commands");
+            engDictionary.Add("ResourceAmountOnCommandDescription", "Show the amount of chosen resource");
             return engDictionary;
         }
 

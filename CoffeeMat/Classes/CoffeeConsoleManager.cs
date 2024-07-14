@@ -36,7 +36,7 @@ namespace CoffeeMat.Classes
             var commandName = parameters[0];
             var commandArgs = parameters.Length > 1 ? parameters.Skip(1).ToArray() : null;
             try{return commands[commandName].Execute(commandArgs);}
-            catch(KeyNotFoundException){ return "Команда введена неверно"; }
+            catch(KeyNotFoundException){ return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"]; }
         }
     }
 }

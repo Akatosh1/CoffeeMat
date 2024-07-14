@@ -24,7 +24,7 @@ namespace CoffeeMat.Classes.Commands
 
         public string GetDescription()
         {
-            return "Показывает список доступных команд";
+            return Locales.phrases[Locales.CurrentLocale]["HelpCommandDescription"];
         }
     }
 }

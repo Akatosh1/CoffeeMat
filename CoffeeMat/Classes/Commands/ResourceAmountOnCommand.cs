@@ -12,12 +12,12 @@ namespace CoffeeMat.Classes.Commands
         public string Execute(string[] args)
         {
             var dataBaseDao = new DataBaseDao();
-            return (args != null) ? dataBaseDao.FindResourceAmount(args[0]) : "Не введено название ресурса";
+            return (args != null) ? dataBaseDao.FindResourceAmount(args[0]) : Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
         }
 
         public string GetDescription()
         {
-            return "Показывает кол-во выбранного ресурса";
+            return Locales.phrases[Locales.CurrentLocale]["ResourceAmountOnCommandDescription"];
         }
     }
 }

@@ -26,7 +26,10 @@ namespace CoffeeMat.Classes
 
             dataBase.CloseConnection();
 
-            return $"Количество '{resourceName}' '{amount}'";
+            return string.Format(
+                Locales.phrases[Locales.CurrentLocale]["ResourceAmount"],
+                resourceName,
+                amount);
         }
 
         public List<IItem> GetSqlTableList(string tableName)
@@ -133,10 +136,50 @@ namespace CoffeeMat.Classes
                 return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
             }
             dataBase.CloseConnection();
-            return Order.CreateOrderString();
+
+            var order = Order.CreateOrderString();
+            Order.Clear();
+            return order;
         }
 
-        public string UpdateOnResource(string resourceName, int resourceChangeAmount)
+        public string UpdateResourceOnCoffee(string resourceName, int resourceChangeAmount)
+        {
+            string queryString = $"update resource_items_db set resource_amount = resource_amount+'{resourceChangeAmount}' where resource_name='{resourceName}'";
+            string queryAmountString = $"select * from resource_items_db where resource_name='{resourceName}' ";
+
+            SqlCommand command = new SqlCommand(queryString, dataBase.GetConection());
+            SqlCommand amountCommand = new SqlCommand(queryAmountString, dataBase.GetConection());
+
+            dataBase.OpenConnection();
+
+            SqlDataReader reader = amountCommand.ExecuteReader();
+
+            if (reader.Read())
+            {
+                var oldAmount = reader.GetInt32(2);
+                var newAmount = oldAmount + resourceChangeAmount;
+                reader.Close();
+                if (newAmount < 0) return string.Format(Locales.phrases[Locales.CurrentLocale]["OutOfResource"], resourceName);
+                if (command.ExecuteNonQuery() == 0) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+                dataBase.CloseConnection();
+
+                if (Order.Coffee != null)
+                {
+                    if (resourceName == "milk")
+                    {
+                        Order.ExtraMilkAmount += 1;
+                    }
+                    if (resourceName == "sugar")
+                    {
+                        Order.ExtraSugarAmount += 1;
+                    }
+                    return Order.CreateOrderString();
+                }
+                else return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+            }
+            else return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+        }
+        public string UpdateResourceOnStorage(string resourceName, int resourceChangeAmount)
         {
 
             string queryString = $"update resource_items_db set resource_amount = resource_amount+'{resourceChangeAmount}' where resource_name='{resourceName}'";
@@ -154,10 +197,16 @@ namespace CoffeeMat.Classes
                 var oldAmount = reader.GetInt32(2);
                 var newAmount = oldAmount + resourceChangeAmount;
                 reader.Close();
-                if (newAmount < 0) return $"Ресурс '{resourceName}' закончился";
+                if (newAmount < 0) return string.Format(Locales.phrases[Locales.CurrentLocale]["OutOfResource"], resourceName);
                 if (command.ExecuteNonQuery() == 0) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
                 dataBase.CloseConnection();
-                return Order.Coffee != null ? Order.CreateOrderString(): $"Количество '{resourceName}' '{newAmount}'";
+
+                if (Order.Coffee == null) return string.Format(
+                    Locales.phrases[Locales.CurrentLocale]["ResourceAmount"],
+                    resourceName,
+                    newAmount);
+                 else return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+
             }
             else return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
         }
