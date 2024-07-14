@@ -13,6 +13,8 @@ namespace CoffeeMat.Classes
         {
             commands.Add("Help", new HelpCommand());
             commands.Add("Помощь", new HelpCommand());
+            commands.Add("ChangeLocales", new ChangeLocalesCommand());
+            commands.Add("ПоменятьЛокализацию", new ChangeLocalesCommand());
             commands.Add("CoffeeList", new CoffeeListCommand());
             commands.Add("СписокКофе", new CoffeeListCommand());
             commands.Add("AddInCoffee", new AddInCoffeeCommand());

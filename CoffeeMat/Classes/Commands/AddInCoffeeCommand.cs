@@ -12,7 +12,7 @@ namespace CoffeeMat.Classes.Commands
 
         public string Execute(string[] args)
         {
-            if (!int.TryParse(args[1], out int amount)) return "В запросе не числовое значение";
+            if (!int.TryParse(args[1], out int amount)) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
             var dataBaseDao = new DataBaseDao();
             return dataBaseDao.UpdateOnResource(args[0], amount);
         }

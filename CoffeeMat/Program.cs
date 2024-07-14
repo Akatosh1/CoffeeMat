@@ -15,6 +15,7 @@ namespace CoffeeMat
         {
             var dataBaseDao = new DataBaseDao();
             dataBaseDao.AddFullItems();
+            Locales.CreateLocales();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new StartScreen());

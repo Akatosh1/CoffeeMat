@@ -70,6 +70,7 @@
     <Compile Include="Classes\CoffeeConsoleManager.cs" />
     <Compile Include="Classes\Commands\AddInCoffeeCommand.cs" />
     <Compile Include="Classes\Commands\AddMoneyCommand.cs" />
+    <Compile Include="Classes\Commands\ChangeLocalesCommand.cs" />
     <Compile Include="Classes\Commands\ChooseCoffeeCommand.cs" />
     <Compile Include="Classes\Commands\CoffeeListCommand.cs" />
     <Compile Include="Classes\Commands\ICommand.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Classes\Commands\ResourceAmountOnCommand.cs" />
     <Compile Include="Classes\DataBaseDao.cs" />
     <Compile Include="Classes\IItem.cs" />
+    <Compile Include="Classes\Locales.cs" />
     <Compile Include="Classes\Money.cs" />
     <Compile Include="Classes\Resource.cs" />
     <Compile Include="Database1DataSet.Designer.cs">
