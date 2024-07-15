@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 
 namespace CoffeeMat
@@ -29,7 +30,13 @@ namespace CoffeeMat
             foreach(var coffee in coffeeList)
             {
                 CoffeeTablePanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
-                var button = CreateSingleButton(coffee.Name, coffee.Picture);
+                var button = CreateSingleButton(coffee.Picture);
+
+                button.Text = coffee.Name +
+                    Locales.phrases[Locales.CurrentLocale]["Price"] +
+                    coffee.Amount.ToString() +
+                    " " +
+                    Locales.phrases[Locales.CurrentLocale]["Rubles"];
                 button.Click += (sender, EventArgs) =>
                 { CoffeeItemClick(sender, EventArgs, coffee.Name); };
                 CoffeeTablePanel.Controls.Add(button);
@@ -44,7 +51,8 @@ namespace CoffeeMat
             foreach(var money in moneyList)
             {
                 MoneyTablePanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
-                var button = CreateSingleButton(money.Amount.ToString(), money.Picture);
+                var button = CreateSingleButton(money.Picture);
+                button.Text = money.Amount + " " + Locales.phrases[Locales.CurrentLocale]["Rubles"];
                 button.Click  += (sender,EventArgs) => 
                 { MoneyItemClick(sender, EventArgs, money.Amount.ToString()); };
                 MoneyTablePanel.Controls.Add(button);             
@@ -52,28 +60,18 @@ namespace CoffeeMat
 
         }
 
-        private Button CreateSingleButton(string name, Image image)
-        {
-            var button = GetStretchButton();
-
-            button.BackgroundImage = image;
-            button.BackgroundImageLayout = ImageLayout.Stretch;
-
-            button.Text = name;
-            button.TextAlign = ContentAlignment.TopLeft;
-            
-            return button;
-        }
-
-        public Button GetStretchButton() 
+        private Button CreateSingleButton(Image image)
         {
             Button button = new Button
             {
                 Dock = DockStyle.Fill,
-                FlatStyle = FlatStyle.Flat
+                FlatStyle = FlatStyle.Flat,
+                BackColor = Color.Transparent,
+                BackgroundImage = image,
+                BackgroundImageLayout = ImageLayout.Stretch,
+                TextAlign = ContentAlignment.TopLeft,
             };
             button.FlatAppearance.BorderSize = 0;
-            button.BackColor = Color.Transparent;
             return button;
         }
 
@@ -82,7 +80,11 @@ namespace CoffeeMat
             var coffee = dataBaseDao.GetCoffeeFromSql(param);
             if (Order.CoffeeMachineBalance < coffee.Amount)
             {
-                MessageBox.Show("Недостаточно денег на балансе", "Предупреждение");
+                var message = string.Format(
+                    Locales.phrases[Locales.CurrentLocale]["NotEnoughMoney"], 
+                    coffee.Amount  - Order.CoffeeMachineBalance,
+                    Locales.phrases[Locales.CurrentLocale]["Rubles"]);
+                MessageBox.Show(message);
             }
             else
             {
