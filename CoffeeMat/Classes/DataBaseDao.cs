@@ -13,6 +13,24 @@ namespace CoffeeMat.Classes
     {
         readonly Database dataBase = new Database();
 
+        public bool CheckResource(string resourceName, int addedResourceAmount)
+        {
+            string queryAmountString = $"select * from resource_items_db where resource_name='{resourceName}' ";
+            SqlCommand amountCommand = new SqlCommand(queryAmountString, dataBase.GetConection());
+
+            dataBase.OpenConnection();
+
+            SqlDataReader reader = amountCommand.ExecuteReader();
+            reader.Read();
+
+            var amount = reader.GetInt32(2) + addedResourceAmount;
+            var isLower = amount < reader.GetInt32(4);
+            var isUpper = amount > reader.GetInt32(5);
+            if (isLower || isUpper) return false;
+            else return true;
+        }
+
+
         public string FindResourceAmount(string resourceName)
         {
 
@@ -232,7 +250,7 @@ namespace CoffeeMat.Classes
             new Money("200 rubles", 200, Properties.Resources._200_рублей_купюра).AddToBase();
             new Resource("sugar", 1000, Properties.Resources.сахар).AddToBase();
             new Resource("milk", 1000, Properties.Resources.молоко).AddToBase();
-            new Resource("BlendedCoffee", 1000, Properties.Resources.кофейные_зерна).AddToBase();
+            new Resource("blendedCoffee", 1000, Properties.Resources.кофейные_зерна).AddToBase();
             new Resource("plasticCups", 1000, Properties.Resources.кофе).AddToBase();
             new Resource("water", 1000, Properties.Resources.вода).AddToBase();
         }

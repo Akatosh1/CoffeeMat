@@ -32,10 +32,12 @@ namespace CoffeeMat.Classes
             Database dataBase = new Database();
 
             string queryString = $"insert into " +
-                $"resource_items_db(resource_name, resource_amount, picture) " +
+                $"resource_items_db(resource_name, resource_amount, picture, min_value, max_value) " +
                 $"values ('{this.Name}', " +
                 $"'{this.Amount}', " +
-                $"@picture)";
+                $"@picture, " +
+                $"{this.MINVALUE}, " +
+                $"{this.MAXVALUE})";
 
             SqlCommand command = new SqlCommand(queryString, dataBase.GetConection());
             command.Parameters.Add("picture", SqlDbType.VarBinary).Value = ImageToByteArray(this.Picture);

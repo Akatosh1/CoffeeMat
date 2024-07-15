@@ -29,6 +29,8 @@ namespace CoffeeMat.Classes
                 { "OutOfResource", "Ресурс {0} закончился" },
                 { "NoMoney", "Такая валюта не принимается" },
                 { "GiveChange", "Ваша сдача:" },
+                { "NotEnoughResource", "Не хватает ресурсов" },
+
                 { "LocalesCommandDescription", "Меняет текущую локализацию" },
                 { "AddInCoffeeCommandDescription", "Добавляет добавку к кофе" },
                 { "AddMoneyCommandDescription", "Вносит деньги в автомат" },
@@ -61,6 +63,8 @@ namespace CoffeeMat.Classes
                 { "OutOfResource", "Out of resource {0}" },
                 { "NoMoney", "Such currency is not accepted" },
                 { "GiveChange", "Your Change:" },
+                { "NotEnoughResource", "Not Enough Resources" },
+
                 { "LocalesCommandDescription", "Change current locales" },
                 { "AddInCoffeeCommandDescription", "Add extras to coffee" },
                 { "AddMoneyCommandDescription", "Increase amount of money" },

@@ -19,5 +19,10 @@ namespace CoffeeMat.Classes
             Amount = amount;
             Picture = picture;
         }
+
+        public bool AddToBase()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

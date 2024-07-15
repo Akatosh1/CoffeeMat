@@ -6,5 +6,7 @@ namespace CoffeeMat.Classes
         string Name { get; set; }
         int Amount { get; set; }
         Image Picture { get; set; }
+
+        bool AddToBase();
     }
 }
