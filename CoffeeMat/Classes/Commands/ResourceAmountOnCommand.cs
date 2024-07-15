@@ -11,6 +11,7 @@ namespace CoffeeMat.Classes.Commands
     {
         public string Execute(string[] args)
         {
+            if (args == null) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
             var dataBaseDao = new DataBaseDao();
             return (args != null) ? dataBaseDao.FindResourceAmount(args[0]) : Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
         }
