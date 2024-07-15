@@ -22,7 +22,9 @@ namespace CoffeeMat.Classes
 
         public bool AddToBase()
         {
-            throw new NotImplementedException();
+            DataBaseDao dataBaseDao = new DataBaseDao();
+
+            return dataBaseDao.UpdateItemOnDataBase(this, "purchase");
         }
     }
 }

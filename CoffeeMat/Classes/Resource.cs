@@ -11,9 +11,9 @@ namespace CoffeeMat.Classes
         public int Amount { get; set; }
         public Image Picture { get; set; }
 
-        private int MINVALUE { get; set; }
+        public int MINVALUE { get; set; }
 
-        private int MAXVALUE { get; set; }
+        public int MAXVALUE { get; set; }
 
         const int MINVALUEDEFAULT = 0;
         const int MAXVALUEDEFAULT = 1000;
@@ -29,23 +29,9 @@ namespace CoffeeMat.Classes
 
         public bool AddToBase()
         {
-            Database dataBase = new Database();
+            DataBaseDao dataBaseDao = new DataBaseDao();
 
-            string queryString = $"insert into " +
-                $"resource_items_db(resource_name, resource_amount, picture, min_value, max_value) " +
-                $"values ('{this.Name}', " +
-                $"'{this.Amount}', " +
-                $"@picture, " +
-                $"{this.MINVALUE}, " +
-                $"{this.MAXVALUE})";
-
-            SqlCommand command = new SqlCommand(queryString, dataBase.GetConection());
-            command.Parameters.Add("picture", SqlDbType.VarBinary).Value = ImageToByteArray(this.Picture);
-
-            dataBase.OpenConnection();
-            var answ = command.ExecuteNonQuery();
-            dataBase.CloseConnection();
-            return (answ == 1);
+            return dataBaseDao.UpdateItemOnDataBase(this, "resource");
         }
 
         public byte[] ImageToByteArray(Image image)

@@ -20,22 +20,11 @@ namespace CoffeeMat.Classes
 
         public bool AddToBase()
         {
-            Database dataBase = new Database();
+            DataBaseDao dataBaseDao = new DataBaseDao();
 
-            string queryString = $"insert into " +
-                $"money_items_db(money_name, money_amount, picture) " +
-                $"values ('{this.Name}', " +
-                $"'{this.Amount}', " +
-                $"@picture)";
-
-            SqlCommand command = new SqlCommand(queryString, dataBase.GetConection());
-            command.Parameters.Add("picture", SqlDbType.VarBinary).Value = ImageToByteArray(this.Picture);
-
-            dataBase.OpenConnection();
-            var answ = command.ExecuteNonQuery();
-            dataBase.CloseConnection();
-            return (answ == 1);
+            return dataBaseDao.UpdateItemOnDataBase(this, "money");
         }
+
         public byte[] ImageToByteArray(Image image)
         {
             MemoryStream ms = new MemoryStream();

@@ -27,25 +27,11 @@ namespace CoffeeMat
 
         public bool AddToBase()
         {
-            Database dataBase = new Database();
+            DataBaseDao dataBaseDao = new DataBaseDao();
 
-            string queryString = $"insert into " +
-                $"coffee_items_db(coffee_name, coffee_amount, picture, coffee, water, milk) " +
-                $"values ('{this.Name}', " +
-                $"'{this.Amount}', " +
-                $"@picture, " +
-                $"'{this.CoffeeAmount}', " +
-                $"'{this.WaterAmount}', " +
-                $"'{this.MilkAmount}')";
-
-            SqlCommand command = new SqlCommand(queryString, dataBase.GetConection());
-            command.Parameters.Add("picture", SqlDbType.VarBinary).Value = ImageToByteArray(this.Picture);
-
-            dataBase.OpenConnection();
-            var answ = command.ExecuteNonQuery();
-            dataBase.CloseConnection();
-            return (answ == 1);
+            return dataBaseDao.UpdateItemOnDataBase(this, "coffee");
         }
+
         public byte[] ImageToByteArray(Image image)
         {
             MemoryStream ms = new MemoryStream();

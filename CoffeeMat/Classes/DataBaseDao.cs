@@ -1,8 +1,8 @@
 ﻿using System.Data.SqlClient;
-using System.Text;
+
 using System.Drawing;
 using System.Collections.Generic;
-using System;
+
 using System.IO;
 using System.Data;
 
@@ -157,25 +157,6 @@ namespace CoffeeMat.Classes
             return image;
         }
 
-        public string UpdateOnOrder()
-        {
-            string queryString = $"insert into purchase_items_db(purchase_name, purchase_amount, picture) " +
-                $"values ('{Order.Coffee.Name}', '{Order.Coffee.Amount}', @picture)";
-
-            SqlCommand command = new SqlCommand(queryString, dataBase.GetConection());
-            command.Parameters.Add("picture", SqlDbType.VarBinary).Value = ImageToByteArray(Order.Coffee.Picture);
-
-            dataBase.OpenConnection();
-
-            if (command.ExecuteNonQuery() == 0)
-            {
-                return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
-            }
-            dataBase.CloseConnection();
-
-            return Order.GetChange();
-        }
-
         public string UpdateResourceOnCoffee(string resourceName, int resourceChangeAmount)
         {
             string queryAmountString = $"select * from resource_items_db where resource_name='{resourceName}' ";
@@ -240,6 +221,46 @@ namespace CoffeeMat.Classes
 
             }
             else return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+        }
+
+        public bool UpdateItemOnDataBase(IItem item, string tableName)
+        {
+            
+            var uncommonParams = "";
+            var uncommonValues = "";
+
+            switch (tableName)
+            {
+                case "coffee":
+                    var coffee = item as Coffee;
+                    uncommonParams = ", coffee, water, milk";
+                    uncommonValues = $", {coffee.CoffeeAmount}, " +
+                        $"{coffee.WaterAmount}, " +
+                        $"{coffee.MilkAmount}";
+                    break;
+                case "resource":
+                    var resource = item as Resource;
+                    uncommonParams = ", min_value, max_value";
+                    uncommonValues = $", {resource.MINVALUE}, {resource.MAXVALUE}";
+                    break;
+            }
+            var commonSqlString = $"insert into " +
+                $"{tableName}_items_db({tableName}_name, {tableName}_amount, picture" +
+                uncommonParams +
+                $") " +
+                $"values ('{item.Name}', " +
+                $"'{item.Amount}', " +
+                $"@picture"
+                +uncommonValues +
+                $") ";
+
+            SqlCommand command = new SqlCommand(commonSqlString, dataBase.GetConection());
+            command.Parameters.Add("picture", SqlDbType.VarBinary).Value = ImageToByteArray(item.Picture);
+
+            dataBase.OpenConnection();
+            var answ = command.ExecuteNonQuery();
+            dataBase.CloseConnection();
+            return (answ == 1);
         }
 
         public void AddFullItems()

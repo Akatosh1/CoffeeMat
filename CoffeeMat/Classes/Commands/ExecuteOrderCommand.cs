@@ -27,9 +27,16 @@ namespace CoffeeMat.Classes.Commands
             }
 
             var difference = Order.CoffeeMachineBalance - Order.Coffee.Amount;
-            if (difference >= 0) return dataBaseDao.UpdateOnOrder();
-            else return string.Format(
-                Locales.phrases[Locales.CurrentLocale]["NotEnoughMoney"], 
+            if (difference >= 0) 
+            {
+                var purchase = new Purchase(Order.Coffee.Name,
+                    Order.Coffee.Amount,
+                    Order.Coffee.Picture);
+                if (purchase.AddToBase()) return Order.GetChange();
+
+            }
+            return string.Format(
+                Locales.phrases[Locales.CurrentLocale]["NotEnoughMoney"],
                 -difference,
                 Locales.phrases[Locales.CurrentLocale]["Rubles"]);
         }
