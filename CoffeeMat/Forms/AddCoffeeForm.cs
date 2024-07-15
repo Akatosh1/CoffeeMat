@@ -41,7 +41,7 @@ namespace CoffeeMat
                 form.StartPosition = FormStartPosition.Manual;
                 form.FormClosing += delegate { this.Show(); };
                 form.Show();
-                this.Hide();
+                this.Close();
             }
             else
             {

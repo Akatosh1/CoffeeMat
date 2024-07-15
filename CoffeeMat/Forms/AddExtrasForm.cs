@@ -34,6 +34,7 @@ namespace CoffeeMat.Forms
             { ItemClick(sender, EventArgs, new AddInCoffeeCommand(), new string[] { "milk", "-1" }); };
             AcceptButton.Click += (sender, EventArgs) =>
             { ItemClick(sender, EventArgs, new ExecuteOrderCommand(), new string[] {}); };
+            AcceptButton.Click += (sender, EventArgs) => { this.Close(); };
 
 
             ExtrasTablePanel.Controls.Add(SugarButton);

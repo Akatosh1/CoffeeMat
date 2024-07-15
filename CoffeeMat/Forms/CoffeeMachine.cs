@@ -104,7 +104,7 @@ namespace CoffeeMat
                             break;
                         }
                     case DialogResult.No:
-                        new ExecuteOrderCommand().Execute(new string[] {});
+                        MessageBox.Show(new ExecuteOrderCommand().Execute(new string[] {}));
                         break;
                 }
             }

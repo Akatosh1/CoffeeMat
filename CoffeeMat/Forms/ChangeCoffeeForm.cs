@@ -20,7 +20,7 @@ namespace CoffeeMat
         {
             InitializeComponent();
             CreateColumns();
-            RefreshDeletePage();
+            RefreshPage();
         }
 
         private void CreateColumns()
@@ -33,7 +33,7 @@ namespace CoffeeMat
             CoffeeGridView.Columns.Add("milk", "молоко");
         }
 
-        private void RefreshDeletePage()
+        private void RefreshPage()
         {
             CoffeeGridView.Rows.Clear();
            

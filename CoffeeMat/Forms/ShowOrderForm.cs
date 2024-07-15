@@ -1,12 +1,4 @@
 ﻿using CoffeeMat.Classes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CoffeeMat.Forms
@@ -18,7 +10,7 @@ namespace CoffeeMat.Forms
         {
             InitializeComponent();
             CreateColumns();
-            RefreshDeletePage();
+            RefreshPage();
         }
 
         private void CreateColumns()
@@ -28,17 +20,17 @@ namespace CoffeeMat.Forms
             PurchaseGridView.Columns.Add("picture", "картинка");
         }
 
-        private void RefreshDeletePage()
+        private void RefreshPage()
         {
             PurchaseGridView.Rows.Clear();
 
 
-            foreach (Purchase coffee in dataBaseDao.GetSqlTableList("purchase"))
+            foreach (Purchase purchase in dataBaseDao.GetSqlTableList("purchase"))
             {
                 PurchaseGridView.Rows.Add(
-                coffee.Name,
-                coffee.Amount,
-                coffee.Picture);
+                purchase.Name,
+                purchase.Amount,
+                purchase.Picture);
             }
         }
     }

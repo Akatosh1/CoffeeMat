@@ -8,6 +8,7 @@ using System.Data;
 
 namespace CoffeeMat.Classes
 {
+    // Класс отвечает за взаимодействие с бд
     internal class DataBaseDao
     {
         readonly Database dataBase = new Database();
@@ -68,6 +69,13 @@ namespace CoffeeMat.Classes
                         break ;
                     case "money":
                         list.Add(new Money(
+                        name,
+                        amount,
+                        image
+                        ));
+                        break;
+                    case "purchase":
+                        list.Add(new Purchase(
                         name,
                         amount,
                         image

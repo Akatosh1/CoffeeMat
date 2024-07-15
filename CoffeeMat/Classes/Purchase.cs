@@ -13,11 +13,11 @@ namespace CoffeeMat.Classes
         public int Amount { get; set; }
         public Image Picture { get; set; }
 
-        public Purchase(string name, int amount) 
+        public Purchase(string name, int amount, Image picture) 
         { 
             Name = name;
             Amount = amount;
-            Picture = null;
+            Picture = picture;
         }
     }
 }
