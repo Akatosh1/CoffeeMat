@@ -33,6 +33,7 @@ namespace CoffeeMat.Classes
             rusDictionary.Add("AddMoneyCommandDescription", "Вносит деньги в автомат");
             rusDictionary.Add("ChooseCoffeeCommandDescription", "Делает выбор кофе в заказе");
             rusDictionary.Add("CoffeeListCommandDescription", "Показывает список доступных видов кофе");
+            rusDictionary.Add("OrderListCommandDescription", "Показывает список заказов");
             rusDictionary.Add("ExecuteCommandDescription", "Создает заказ");
             rusDictionary.Add("FillResourceCommandDescription", "Пополняет один из ресурсов на введённое количество у.е");
             rusDictionary.Add("HelpCommandDescription", "Показывает список доступных команд");
@@ -63,6 +64,7 @@ namespace CoffeeMat.Classes
             engDictionary.Add("AddMoneyCommandDescription", "Increase amount of money");
             engDictionary.Add("ChooseCoffeeCommandDescription", "Make choice of coffee in order");
             engDictionary.Add("CoffeeListCommandDescription", "Show all coffee choices");
+            engDictionary.Add("OrderListCommandDescription", "Show purchases list");
             engDictionary.Add("ExecuteCommandDescription", "Create order");
             engDictionary.Add("FillResourceCommandDescription", "Fill resource with the entered amount of units");
             engDictionary.Add("HelpCommandDescription", "Show list of available commands");

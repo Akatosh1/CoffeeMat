@@ -64,6 +64,31 @@ namespace CoffeeMat
             }
             dataBase.CloseConnection();
         }
+
+        public static string GetChange()
+        {
+            var list = ValidMoneyAmounts.ToList();
+            list.Sort();
+            list.Reverse();
+
+            var stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine(Order.CreateOrderString());
+            Order.Clear();
+
+            while (list.Count > 0 && Order.CoffeeMachineBalance > 0) 
+            {
+                var higherElement = list[0];
+                if(Order.CoffeeMachineBalance >= higherElement)
+                {
+                    Order.CoffeeMachineBalance -= higherElement;
+                    stringBuilder.Append(higherElement.ToString());
+                    stringBuilder.Append(" ");
+                    stringBuilder.AppendLine(Locales.phrases[Locales.CurrentLocale]["Rubles"]);
+                }
+                else list.RemoveAt(0);
+            }
+            return stringBuilder.ToString();
+        }
     }
 
 }

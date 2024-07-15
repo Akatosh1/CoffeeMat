@@ -31,29 +31,21 @@ namespace CoffeeMat
 
         private void AddButtons()
         {
+            var controls = new Dictionary<string, EventHandler>();
+            controls.Add("Поменять локализацию", ChangeLocalesButton_Click);
+            controls.Add("Запуск кофе машины", CoffeeMachineButton_Click);
+            controls.Add("Редактирование видов кофе", CoffeeFormattingButton_Click);
+            controls.Add("Работа с консолью", ConsoleButton_Click);
+            controls.Add("Список заказов", ShowOrdersButton_click);
             startTableLayout.Controls.Clear();
-            var localsButton = GetStretchButton("Поменять локализацию");
-            var coffeeMatButton = GetStretchButton("Запуск кофе машины");
-            var coffeeChangeButton = GetStretchButton("Редактирование видов кофе");
-            var consoleButton = GetStretchButton("Работа с консолью");
-            var ordersButton= GetStretchButton("Список заказов");
 
-            localsButton.Click += ChangeLocalesButton_Click;
-            coffeeMatButton.Click += CoffeeMachineButton_Click;
-            coffeeChangeButton.Click += CoffeeFormattingButton_Click;
-            consoleButton.Click += ConsoleButton_Click;
-            ordersButton.Click += ShowOrdersButton_click;
-
-            startTableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
-            startTableLayout.Controls.Add(localsButton);
-            startTableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
-            startTableLayout.Controls.Add(coffeeMatButton);
-            startTableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
-            startTableLayout.Controls.Add(coffeeChangeButton);
-            startTableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
-            startTableLayout.Controls.Add(consoleButton);
-            startTableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
-            startTableLayout.Controls.Add(ordersButton);
+            foreach (var control in controls.Keys)
+            {
+                var button = GetStretchButton(control);
+                button.Click += controls[control];
+                startTableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
+                startTableLayout.Controls.Add(button);
+            }           
         }
 
         private void CoffeeMachineButton_Click(object sender, EventArgs e)
@@ -73,7 +65,7 @@ namespace CoffeeMat
 
         private void ShowOrdersButton_click(object sender, EventArgs e)
         {
-            MessageBox.Show("");
+            RedirectForm(new ShowOrderForm());
         }
 
         private void RedirectForm(Form redirectForm)

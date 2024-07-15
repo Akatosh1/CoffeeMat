@@ -17,6 +17,8 @@ namespace CoffeeMat.Classes
             commands.Add("ПоменятьЛокализацию", new ChangeLocalesCommand());
             commands.Add("CoffeeList", new CoffeeListCommand());
             commands.Add("СписокКофе", new CoffeeListCommand());
+            commands.Add("OrderList", new OrderListCommand());
+            commands.Add("СписокЗаказов", new OrderListCommand());
             commands.Add("AddInCoffee", new AddInCoffeeCommand());
             commands.Add("ДобавитьВКофе", new AddInCoffeeCommand());
             commands.Add("AddMoney", new AddMoneyCommand());

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Collections.Generic;
 using System;
 using System.IO;
+using System.Data;
 
 namespace CoffeeMat.Classes
 {
@@ -124,10 +125,11 @@ namespace CoffeeMat.Classes
 
         public string UpdateOnOrder()
         {
-            string queryString = $"insert into purchase_items_db(purchase_name, price) " +
-                $"values ('{Order.Coffee.Name}', '{Order.Coffee.Amount}')";
+            string queryString = $"insert into purchase_items_db(purchase_name, purchase_amount, picture) " +
+                $"values ('{Order.Coffee.Name}', '{Order.Coffee.Amount}', @picture)";
 
             SqlCommand command = new SqlCommand(queryString, dataBase.GetConection());
+            command.Parameters.Add("picture", SqlDbType.VarBinary).Value = ImageToByteArray(Order.Coffee.Picture);
 
             dataBase.OpenConnection();
 
@@ -137,9 +139,7 @@ namespace CoffeeMat.Classes
             }
             dataBase.CloseConnection();
 
-            var order = Order.CreateOrderString();
-            Order.Clear();
-            return order;
+            return Order.GetChange();
         }
 
         public string UpdateResourceOnCoffee(string resourceName, int resourceChangeAmount)
@@ -232,6 +232,11 @@ namespace CoffeeMat.Classes
             new Resource("water", 1000, Properties.Resources.вода).AddToBase();
         }
 
-        
+        public byte[] ImageToByteArray(Image image)
+        {
+            MemoryStream ms = new MemoryStream();
+            image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            return ms.ToArray();
+        }
     }
 }

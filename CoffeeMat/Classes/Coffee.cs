@@ -15,10 +15,10 @@ namespace CoffeeMat
         public int WaterAmount { get; set; }
         public int MilkAmount { get; set; }
 
-        public Coffee(string name, int price, Image picture, int coffee, int water, int milk)
+        public Coffee(string name, int amount, Image picture, int coffee, int water, int milk)
         {
             Name = name;
-            Amount = price;
+            Amount = amount;
             Picture = picture;
             CoffeeAmount = coffee;
             WaterAmount = water;
@@ -30,7 +30,7 @@ namespace CoffeeMat
             Database dataBase = new Database();
 
             string queryString = $"insert into " +
-                $"coffee_items_db(coffee_name, price, picture, coffee, water, milk) " +
+                $"coffee_items_db(coffee_name, coffee_amount, picture, coffee, water, milk) " +
                 $"values ('{this.Name}', " +
                 $"'{this.Amount}', " +
                 $"@picture, " +
