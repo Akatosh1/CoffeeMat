@@ -26,10 +26,12 @@ namespace CoffeeMat.Classes
             var amount = reader.GetInt32(2) + addedResourceAmount;
             var isLower = amount < reader.GetInt32(4);
             var isUpper = amount > reader.GetInt32(5);
+            reader.Close();
+            dataBase.CloseConnection();
+
             if (isLower || isUpper) return false;
             else return true;
         }
-
 
         public string FindResourceAmount(string resourceName)
         {

@@ -29,7 +29,13 @@ namespace CoffeeMat.Classes
                 { "OutOfResource", "Ресурс {0} закончился" },
                 { "NoMoney", "Такая валюта не принимается" },
                 { "GiveChange", "Ваша сдача:" },
-                { "NotEnoughResource", "Не хватает ресурсов" },
+                { "NotEnoughResource", "Не хватает ресурса {0}" },
+
+                { "water", "Вода" },
+                { "milk", "молоко" },
+                { "sugar", "Сахар" },
+                { "plasticCups", "Пластиковые стаканчики" },
+                { "blendedCoffee", "Молотый кофе" },
 
                 { "LocalesCommandDescription", "Меняет текущую локализацию" },
                 { "AddInCoffeeCommandDescription", "Добавляет добавку к кофе" },
@@ -63,7 +69,13 @@ namespace CoffeeMat.Classes
                 { "OutOfResource", "Out of resource {0}" },
                 { "NoMoney", "Such currency is not accepted" },
                 { "GiveChange", "Your Change:" },
-                { "NotEnoughResource", "Not Enough Resources" },
+                { "NotEnoughResource", "Not Enough {0}" },
+
+                { "water", "Water" },
+                { "milk", "Milk" },
+                { "sugar", "Sugar" },
+                { "plasticCups", "Plastic Cups" },
+                { "blendedCoffee", "Blended Coffee" },
 
                 { "LocalesCommandDescription", "Change current locales" },
                 { "AddInCoffeeCommandDescription", "Add extras to coffee" },

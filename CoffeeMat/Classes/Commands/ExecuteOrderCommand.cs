@@ -12,6 +12,21 @@ namespace CoffeeMat.Classes.Commands
         {
             if (Order.Coffee == null) return Locales.phrases[Locales.CurrentLocale]["OrderNotFormed"];
             var dataBaseDao = new DataBaseDao();
+
+            var resources = new Dictionary<string, int>() {
+                { "milk", -Order.Coffee.MilkAmount - Order.ExtraMilkAmount },
+                { "water", -Order.Coffee.WaterAmount },
+                { "plasticCups", -1 },
+                { "blendedCoffee", -Order.Coffee.CoffeeAmount },
+                { "sugar",  - Order.ExtraSugarAmount}
+            };
+            foreach (var resource in resources.Keys)
+            {
+                if (!dataBaseDao.CheckResource(resource, resources[resource]))
+                    return string.Format(Locales.phrases[Locales.CurrentLocale]["NotEnoughResource"],
+                        Locales.phrases[Locales.CurrentLocale][resource]);
+            }
+
             var difference = Order.CoffeeMachineBalance - Order.Coffee.Amount;
             if (difference >= 0) return dataBaseDao.UpdateOnOrder();
             else return string.Format(

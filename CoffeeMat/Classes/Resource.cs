@@ -16,7 +16,7 @@ namespace CoffeeMat.Classes
         private int MAXVALUE { get; set; }
 
         const int MINVALUEDEFAULT = 0;
-        const int MAXVALUEDEFAULT = 0;
+        const int MAXVALUEDEFAULT = 1000;
 
         public Resource(string resourceName, int resourceAmount, Image image)
         {

@@ -14,15 +14,18 @@ namespace CoffeeMat.Classes.Commands
             var dataBaseDAO = new DataBaseDao();
             var coffee = dataBaseDAO.GetCoffeeFromSql(args[0]);
 
-
-            if (!dataBaseDAO.CheckResource("milk", -coffee.MilkAmount)) 
-                return Locales.phrases[Locales.CurrentLocale]["NotEnoughResource"];
-            if (!dataBaseDAO.CheckResource("water", -coffee.WaterAmount))
-                return Locales.phrases[Locales.CurrentLocale]["NotEnoughResource"];
-            if (!dataBaseDAO.CheckResource("plasticCups", -1))
-                return Locales.phrases[Locales.CurrentLocale]["NotEnoughResource"];
-            if (!dataBaseDAO.CheckResource("blendedCoffee", -coffee.CoffeeAmount))
-                return Locales.phrases[Locales.CurrentLocale]["NotEnoughResource"];
+            var resources = new Dictionary<string, int>() {
+                { "milk", -coffee.MilkAmount }, 
+                { "water", -coffee.WaterAmount }, 
+                { "plasticCups", -1 }, 
+                { "blendedCoffee", -coffee.CoffeeAmount } 
+            };
+            foreach (var resource in resources.Keys) 
+            {
+                if (!dataBaseDAO.CheckResource(resource, resources[resource]))
+                    return string.Format(Locales.phrases[Locales.CurrentLocale]["NotEnoughResource"],
+                        Locales.phrases[Locales.CurrentLocale][resource]);
+            }
 
             var difference = Order.CoffeeMachineBalance - coffee.Amount;
             if (difference >= 0)
