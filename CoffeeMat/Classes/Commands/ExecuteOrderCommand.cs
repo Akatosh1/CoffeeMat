@@ -22,9 +22,8 @@ namespace CoffeeMat.Classes.Commands
             };
             foreach (var resource in resources.Keys)
             {
-                if (!dataBaseDao.CheckResource(resource, resources[resource]))
-                    return string.Format(Locales.phrases[Locales.CurrentLocale]["NotEnoughResource"],
-                        Locales.phrases[Locales.CurrentLocale][resource]);
+                var checkString = dataBaseDao.CheckResource(resource, resources[resource]);
+                if (checkString.Length != 0) return checkString;
             }
 
             var difference = Order.CoffeeMachineBalance - Order.Coffee.Amount;

@@ -17,11 +17,9 @@ namespace CoffeeMat.Classes.Commands
             if (!int.TryParse(args[1], out int amount)) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
 
             var dataBaseDao = new DataBaseDao();
-            if (!dataBaseDao.CheckResource(args[0], -1))
-                return string.Format(Locales.phrases[Locales.CurrentLocale]["NotEnoughResource"],
-                    Locales.phrases[Locales.CurrentLocale][args[0]]);
-
-
+            var checkString = dataBaseDao.CheckResource(args[0], -1);
+            if (checkString.Length != 0) return checkString;
+                
             return dataBaseDao.UpdateResourceOnCoffee(args[0], amount);
         }
 

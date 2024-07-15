@@ -13,7 +13,7 @@ namespace CoffeeMat.Classes
     {
         readonly Database dataBase = new Database();
 
-        public bool CheckResource(string resourceName, int addedResourceAmount)
+        public string CheckResource(string resourceName, int addedResourceAmount)
         {
             string queryAmountString = $"select * from resource_items_db where resource_name='{resourceName}' ";
             SqlCommand amountCommand = new SqlCommand(queryAmountString, dataBase.GetConection());
@@ -29,8 +29,11 @@ namespace CoffeeMat.Classes
             reader.Close();
             dataBase.CloseConnection();
 
-            if (isLower || isUpper) return false;
-            else return true;
+            if (isLower) return string.Format(Locales.phrases[Locales.CurrentLocale]["NotEnoughResource"],
+                    Locales.phrases[Locales.CurrentLocale][resourceName]);
+            if (isUpper) return string.Format(Locales.phrases[Locales.CurrentLocale]["StorageIsFull"],
+                    Locales.phrases[Locales.CurrentLocale][resourceName]);
+            else return "";
         }
 
         public string FindResourceAmount(string resourceName)

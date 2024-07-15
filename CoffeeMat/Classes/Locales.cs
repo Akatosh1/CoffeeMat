@@ -30,6 +30,7 @@ namespace CoffeeMat.Classes
                 { "NoMoney", "Такая валюта не принимается" },
                 { "GiveChange", "Ваша сдача:" },
                 { "NotEnoughResource", "Не хватает ресурса {0}" },
+                { "StorageIsFull", "Хранилище ресурса {0} заполнено" },
 
                 { "water", "Вода" },
                 { "milk", "молоко" },
@@ -70,6 +71,7 @@ namespace CoffeeMat.Classes
                 { "NoMoney", "Such currency is not accepted" },
                 { "GiveChange", "Your Change:" },
                 { "NotEnoughResource", "Not Enough {0}" },
+                { "StorageIsFull", "Storage of {0} is full" },
 
                 { "water", "Water" },
                 { "milk", "Milk" },
