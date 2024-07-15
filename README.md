@@ -49,12 +49,12 @@ ICommand - интерфейс для классов, реализующих ко
 
 Примеры работы программы:
 
-Пример 1:
-![example1](https://github.com/user-attachments/assets/a742971b-4c05-4bbd-a13a-ecfc527025ad)
-![Example2](https://github.com/user-attachments/assets/8816ba90-1570-4486-88d7-9f18eef6f65b)
+Пример 1: <br />
+![example1](https://github.com/user-attachments/assets/a742971b-4c05-4bbd-a13a-ecfc527025ad) <br />
+![Example2](https://github.com/user-attachments/assets/8816ba90-1570-4486-88d7-9f18eef6f65b) <br />
 
-Пример 2:
-![example3](https://github.com/user-attachments/assets/441231a3-25e6-4d88-ae41-4e4e97d2c6cd)
+Пример 2: <br />
+![example3](https://github.com/user-attachments/assets/441231a3-25e6-4d88-ae41-4e4e97d2c6cd) <br />
 
 TODO<br />
 1)Добавить ограничение на ресурсы.<br />
