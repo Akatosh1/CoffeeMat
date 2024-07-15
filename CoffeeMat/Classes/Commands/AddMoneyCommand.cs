@@ -9,7 +9,8 @@ namespace CoffeeMat.Classes.Commands
     internal class AddMoneyCommand : ICommand
     {
         public string Execute(string[] args)
-        {         
+        {
+            if (args == null) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
             if (int.TryParse(args[0],out int arg))
             {
                 if (!Order.ValidMoneyAmounts.Contains(arg)) return Locales.phrases[Locales.CurrentLocale]["NoMoney"];
