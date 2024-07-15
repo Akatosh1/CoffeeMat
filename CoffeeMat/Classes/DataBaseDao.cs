@@ -21,11 +21,13 @@ namespace CoffeeMat.Classes
             dataBase.OpenConnection();
 
             SqlDataReader reader = amountCommand.ExecuteReader();
-            reader.Read();
+
+            if (!reader.Read()) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
 
             var amount = reader.GetInt32(2) + addedResourceAmount;
             var isLower = amount < reader.GetInt32(4);
             var isUpper = amount > reader.GetInt32(5);
+
             reader.Close();
             dataBase.CloseConnection();
 
@@ -46,9 +48,10 @@ namespace CoffeeMat.Classes
             dataBase.OpenConnection();
 
             SqlDataReader reader = amountCommand.ExecuteReader();
-            reader.Read();
+            if(!reader.Read()) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
             var amount = reader.GetInt32(2);
 
+            reader.Close(); 
             dataBase.CloseConnection();
 
             return string.Format(

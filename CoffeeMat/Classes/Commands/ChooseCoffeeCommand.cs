@@ -11,8 +11,10 @@ namespace CoffeeMat.Classes.Commands
         public string Execute(string[] args)
         {
             if (args == null) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+            
             var dataBaseDAO = new DataBaseDao();
             var coffee = dataBaseDAO.GetCoffeeFromSql(args[0]);
+            if (coffee == null) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
 
             var resources = new Dictionary<string, int>() {
                 { "milk", -coffee.MilkAmount }, 
