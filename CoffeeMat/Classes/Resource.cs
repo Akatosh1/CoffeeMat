@@ -11,11 +11,20 @@ namespace CoffeeMat.Classes
         public int Amount { get; set; }
         public Image Picture { get; set; }
 
+        private int MINVALUE { get; set; }
+
+        private int MAXVALUE { get; set; }
+
+        const int MINVALUEDEFAULT = 0;
+        const int MAXVALUEDEFAULT = 0;
+
         public Resource(string resourceName, int resourceAmount, Image image)
         {
             Name = resourceName;
             Amount = resourceAmount;
             Picture = image;
+            MINVALUE = MINVALUEDEFAULT;
+            MAXVALUE = MAXVALUEDEFAULT;
         }
 
         public bool AddToBase()

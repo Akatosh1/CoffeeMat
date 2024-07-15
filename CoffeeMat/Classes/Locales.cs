@@ -13,64 +13,65 @@ namespace CoffeeMat.Classes
 
         public static Dictionary<string,string> CreateRusLocales()
         {
-            var rusDictionary = new Dictionary<string, string>();
-            rusDictionary.Add("IncorrectRequest", "Неправильный запрос");
-            rusDictionary.Add("ChangeLocales", "Локализация изменена на русскую");
-            rusDictionary.Add("Balance",  "Баланс {0} рублей");
-            rusDictionary.Add("Order", "Ваш заказ: {0}");
-            rusDictionary.Add("ExtraSugar", "плюс {0} сахар");
-            rusDictionary.Add("ExtraMilk", "плюс {0} молоко");
-            rusDictionary.Add("Price", " цена:");
-            rusDictionary.Add("Rubles", "рублей");
-            rusDictionary.Add("NotEnoughMoney", "Не хватает {0} {1}");
-            rusDictionary.Add("OrderNotFormed", "Заказ не сформирован");
-            rusDictionary.Add("ResourceAmount", "Количество {0} {1} у.е");
-            rusDictionary.Add("OutOfResource", "Ресурс {0} закончился");
-            rusDictionary.Add("NoMoney", "Такая валюта не принимается");
-            rusDictionary.Add("GiveChange", "Ваша сдача:");
-
-            rusDictionary.Add("LocalesCommandDescription", "Меняет текущую локализацию");
-            rusDictionary.Add("AddInCoffeeCommandDescription", "Добавляет добавку к кофе");
-            rusDictionary.Add("AddMoneyCommandDescription", "Вносит деньги в автомат");
-            rusDictionary.Add("ChooseCoffeeCommandDescription", "Делает выбор кофе в заказе");
-            rusDictionary.Add("CoffeeListCommandDescription", "Показывает список доступных видов кофе");
-            rusDictionary.Add("OrderListCommandDescription", "Показывает список заказов");
-            rusDictionary.Add("ExecuteCommandDescription", "Создает заказ");
-            rusDictionary.Add("FillResourceCommandDescription", "Пополняет один из ресурсов на введённое количество у.е");
-            rusDictionary.Add("HelpCommandDescription", "Показывает список доступных команд");
-            rusDictionary.Add("ResourceAmountOnCommandDescription", "Показывает кол-во выбранного ресурса");
+            var rusDictionary = new Dictionary<string, string>
+            {
+                { "IncorrectRequest", "Неправильный запрос" },
+                { "ChangeLocales", "Локализация изменена на русскую" },
+                { "Balance", "Баланс {0} рублей" },
+                { "Order", "Ваш заказ: {0}" },
+                { "ExtraSugar", "плюс {0} сахар" },
+                { "ExtraMilk", "плюс {0} молоко" },
+                { "Price", " цена:" },
+                { "Rubles", "рублей" },
+                { "NotEnoughMoney", "Не хватает {0} {1}" },
+                { "OrderNotFormed", "Заказ не сформирован" },
+                { "ResourceAmount", "Количество {0} {1} у.е" },
+                { "OutOfResource", "Ресурс {0} закончился" },
+                { "NoMoney", "Такая валюта не принимается" },
+                { "GiveChange", "Ваша сдача:" },
+                { "LocalesCommandDescription", "Меняет текущую локализацию" },
+                { "AddInCoffeeCommandDescription", "Добавляет добавку к кофе" },
+                { "AddMoneyCommandDescription", "Вносит деньги в автомат" },
+                { "ChooseCoffeeCommandDescription", "Делает выбор кофе в заказе" },
+                { "CoffeeListCommandDescription", "Показывает список доступных видов кофе" },
+                { "OrderListCommandDescription", "Показывает список заказов" },
+                { "ExecuteCommandDescription", "Создает заказ" },
+                { "FillResourceCommandDescription", "Пополняет один из ресурсов на введённое количество у.е" },
+                { "HelpCommandDescription", "Показывает список доступных команд" },
+                { "ResourceAmountOnCommandDescription", "Показывает кол-во выбранного ресурса" }
+            };
             return rusDictionary;
         }
 
         public static Dictionary<string, string> CreateEngLocales()
         {
-            var engDictionary = new Dictionary<string, string>();
-            engDictionary.Add("IncorrectRequest", "Incorrect Request");
-            engDictionary.Add("ChangeLocales", "Change locales on english");
-            engDictionary.Add("Balance", "Balance {0} rubles");
-            engDictionary.Add("Order", "Your order: {0}");
-            engDictionary.Add("ExtraSugar", "plus {0} sugar");
-            engDictionary.Add("ExtraMilk", "plus {0} milk");
-            engDictionary.Add("Price", " price:");
-            engDictionary.Add("Rubles", "rubles");
-            engDictionary.Add("NotEnoughMoney", "{0} {1} are missing");
-            engDictionary.Add("OrderNotFormed", "Order not formed");
-            engDictionary.Add("ResourceAmount", "Amount of {0} {1} units");
-            engDictionary.Add("OutOfResource", "Out of resource {0}");
-            engDictionary.Add("NoMoney", "Such currency is not accepted");
-            engDictionary.Add("GiveChange", "Your Change:");
-
-
-            engDictionary.Add("LocalesCommandDescription", "Change current locales");
-            engDictionary.Add("AddInCoffeeCommandDescription", "Add extras to coffee");
-            engDictionary.Add("AddMoneyCommandDescription", "Increase amount of money");
-            engDictionary.Add("ChooseCoffeeCommandDescription", "Make choice of coffee in order");
-            engDictionary.Add("CoffeeListCommandDescription", "Show all coffee choices");
-            engDictionary.Add("OrderListCommandDescription", "Show purchases list");
-            engDictionary.Add("ExecuteCommandDescription", "Create order");
-            engDictionary.Add("FillResourceCommandDescription", "Fill resource with the entered amount of units");
-            engDictionary.Add("HelpCommandDescription", "Show list of available commands");
-            engDictionary.Add("ResourceAmountOnCommandDescription", "Show the amount of chosen resource");
+            var engDictionary = new Dictionary<string, string>
+            {
+                { "IncorrectRequest", "Incorrect Request" },
+                { "ChangeLocales", "Change locales on english" },
+                { "Balance", "Balance {0} rubles" },
+                { "Order", "Your order: {0}" },
+                { "ExtraSugar", "plus {0} sugar" },
+                { "ExtraMilk", "plus {0} milk" },
+                { "Price", " price:" },
+                { "Rubles", "rubles" },
+                { "NotEnoughMoney", "{0} {1} are missing" },
+                { "OrderNotFormed", "Order not formed" },
+                { "ResourceAmount", "Amount of {0} {1} units" },
+                { "OutOfResource", "Out of resource {0}" },
+                { "NoMoney", "Such currency is not accepted" },
+                { "GiveChange", "Your Change:" },
+                { "LocalesCommandDescription", "Change current locales" },
+                { "AddInCoffeeCommandDescription", "Add extras to coffee" },
+                { "AddMoneyCommandDescription", "Increase amount of money" },
+                { "ChooseCoffeeCommandDescription", "Make choice of coffee in order" },
+                { "CoffeeListCommandDescription", "Show all coffee choices" },
+                { "OrderListCommandDescription", "Show purchases list" },
+                { "ExecuteCommandDescription", "Create order" },
+                { "FillResourceCommandDescription", "Fill resource with the entered amount of units" },
+                { "HelpCommandDescription", "Show list of available commands" },
+                { "ResourceAmountOnCommandDescription", "Show the amount of chosen resource" }
+            };
             return engDictionary;
         }
 
