@@ -75,6 +75,9 @@ namespace CoffeeMat
             stringBuilder.AppendLine(Order.CreateOrderString());
             Order.Clear();
 
+            if(CoffeeMachineBalance > 0)  
+                stringBuilder.AppendLine(Locales.phrases[Locales.CurrentLocale]["GiveChange"]);
+
             while (list.Count > 0 && Order.CoffeeMachineBalance > 0) 
             {
                 var higherElement = list[0];
