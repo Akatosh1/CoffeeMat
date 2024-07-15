@@ -152,10 +152,8 @@ namespace CoffeeMat.Classes
 
         public string UpdateResourceOnCoffee(string resourceName, int resourceChangeAmount)
         {
-            string queryString = $"update resource_items_db set resource_amount = resource_amount+'{resourceChangeAmount}' where resource_name='{resourceName}'";
             string queryAmountString = $"select * from resource_items_db where resource_name='{resourceName}' ";
 
-            SqlCommand command = new SqlCommand(queryString, dataBase.GetConection());
             SqlCommand amountCommand = new SqlCommand(queryAmountString, dataBase.GetConection());
 
             dataBase.OpenConnection();
@@ -168,7 +166,6 @@ namespace CoffeeMat.Classes
                 var newAmount = oldAmount + resourceChangeAmount;
                 reader.Close();
                 if (newAmount < 0) return string.Format(Locales.phrases[Locales.CurrentLocale]["OutOfResource"], resourceName);
-                if (command.ExecuteNonQuery() == 0) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
                 dataBase.CloseConnection();
 
                 if (Order.Coffee != null)
