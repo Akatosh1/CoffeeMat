@@ -5,6 +5,7 @@
         public string Execute(string[] args)
         {
             if (args == null) return Locales.GetLocales("IncorrectRequest");
+            if (args.Length != 2) return Locales.GetLocales("IncorrectRequest");
             if (!int.TryParse(args[1], out int amount)) return Locales.GetLocales("IncorrectRequest");
             var dataBaseDao = new DataBaseDao();
 

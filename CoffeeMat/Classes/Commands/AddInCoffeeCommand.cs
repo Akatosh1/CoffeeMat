@@ -1,5 +1,6 @@
 ﻿namespace CoffeeMat.Classes.Commands
 {
+    
     public class AddInCoffeeCommand : ICommand
     {
 
