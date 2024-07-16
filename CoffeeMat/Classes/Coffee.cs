@@ -1,8 +1,5 @@
 ﻿using CoffeeMat.Classes;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.IO;
 
 namespace CoffeeMat
 {

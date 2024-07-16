@@ -1,13 +1,9 @@
-﻿using System;
+﻿using CoffeeMat.Classes;
+using CoffeeMat.Classes.Commands;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Data;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CoffeeMat.Classes;
-using CoffeeMat.Classes.Commands;
 
 namespace CoffeeMat
 {

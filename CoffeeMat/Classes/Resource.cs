@@ -1,7 +1,4 @@
-﻿using System.Data.SqlClient;
-using System.Data;
-using System.Drawing;
-using System.IO;
+﻿using System.Drawing;
 
 namespace CoffeeMat.Classes
 {
