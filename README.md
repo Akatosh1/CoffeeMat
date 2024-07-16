@@ -56,6 +56,10 @@ ICommand - интерфейс для классов, реализующих ко
 Пример 2: <br />
 ![example3](https://github.com/user-attachments/assets/441231a3-25e6-4d88-ae41-4e4e97d2c6cd) <br />
 
+Пример 3(манипуляции с ресурсами): <br />
+![image](https://github.com/user-attachments/assets/6b653f85-1830-4763-bb4d-731365122fda) <br />
+
+
 TODO<br />
 1)Доделать форму изменения экземпляров кофе.<br />
 2)Добавить текстовые описания к каждому классу в проекте.<br />
