@@ -30,7 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.CoffeeGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.CoffeeLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.ChangeButton = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.CoffeeGridView, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.CoffeeLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -69,16 +69,16 @@
             this.CoffeeGridView.Size = new System.Drawing.Size(794, 277);
             this.CoffeeGridView.TabIndex = 0;
             // 
-            // label1
+            // CoffeeLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(794, 39);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Виды кофе";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CoffeeLabel.AutoSize = true;
+            this.CoffeeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CoffeeLabel.Location = new System.Drawing.Point(3, 0);
+            this.CoffeeLabel.Name = "CoffeeLabel";
+            this.CoffeeLabel.Size = new System.Drawing.Size(794, 39);
+            this.CoffeeLabel.TabIndex = 1;
+            this.CoffeeLabel.Text = "Виды кофе";
+            this.CoffeeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
@@ -159,7 +159,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView CoffeeGridView;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label CoffeeLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button ChangeButton;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,6 +12,10 @@ namespace CoffeeMat.Classes
         public static string CurrentLocale = "eng";
         public static Dictionary<string, Dictionary<string, string>> phrases = new Dictionary<string, Dictionary<string, string>>();
 
+        public static string GetLocales(string value)
+        {
+            return Locales.phrases[Locales.CurrentLocale][value];
+        }
         public static Dictionary<string,string> CreateRusLocales()
         {
             var rusDictionary = new Dictionary<string, string>
@@ -19,10 +24,11 @@ namespace CoffeeMat.Classes
                 { "ChangeLocales", "Локализация изменена на русскую" },
                 { "Balance", "Баланс {0} рублей" },
                 { "Order", "Ваш заказ: {0}" },
-                { "ExtraSugar", "плюс {0} сахар" },
-                { "ExtraMilk", "плюс {0} молоко" },
-                { "Price", " цена:" },
-                { "Rubles", "рублей" },
+                { "ExtraSugar", "Плюс {0} сахар" },
+                { "ExtraMilk", "Плюс {0} молоко" },
+                { "Price", "Цена" },
+                { "Picture", "Изображение" },
+                { "Rubles", "Рублей" },
                 { "NotEnoughMoney", "Не хватает {0} {1}" },
                 { "OrderNotFormed", "Заказ не сформирован" },
                 { "ResourceAmount", "Количество {0} {1} у.е" },
@@ -31,12 +37,26 @@ namespace CoffeeMat.Classes
                 { "GiveChange", "Ваша сдача:" },
                 { "NotEnoughResource", "Не хватает ресурса {0}" },
                 { "StorageIsFull", "Хранилище ресурса {0} заполнено" },
+                { "AdditionError", "Ошибка с добавлением в базу" },
+                { "OutOfSymbolsError", "Название должно быть короче 50 символов"},
+                { "Success", "Успешно" },
+                { "Add", "Добавить"},
+                { "AddPicture", "Добавить изображение"},
+                { "Name", "Название" },
+                { "Receipt", "Рецепт" },
+                { "ExecuteOrder", "Оформить заказ" },
+                { "LocalesButton", "Поменять локализацию" },
+                { "CoffeeMachineButton", "Запуск кофе машины" },
+                { "CoffeeChangeButton", "Редактирование видов кофе" },
+                { "ConsoleButton", "Работа с консолью" },
+                { "OrderListButton", "Список заказов" },
+                { "AddToOrderExtrasQuestion", "Желаете добавить что-то к заказу?" },
 
                 { "water", "Вода" },
                 { "milk", "молоко" },
                 { "sugar", "Сахар" },
                 { "plasticCups", "Пластиковые стаканчики" },
-                { "blendedCoffee", "Молотый кофе" },
+                { "blendedCoffee", "Кофе" },
 
                 { "LocalesCommandDescription", "Меняет текущую локализацию" },
                 { "AddInCoffeeCommandDescription", "Добавляет добавку к кофе" },
@@ -60,10 +80,11 @@ namespace CoffeeMat.Classes
                 { "ChangeLocales", "Change locales on english" },
                 { "Balance", "Balance {0} rubles" },
                 { "Order", "Your order: {0}" },
-                { "ExtraSugar", "plus {0} sugar" },
-                { "ExtraMilk", "plus {0} milk" },
-                { "Price", " price:" },
-                { "Rubles", "rubles" },
+                { "ExtraSugar", "Plus {0} sugar" },
+                { "ExtraMilk", "Plus {0} milk" },
+                { "Price", "Price" },
+                { "Picture", "Picture" },
+                { "Rubles", "Rubles" },
                 { "NotEnoughMoney", "{0} {1} are missing" },
                 { "OrderNotFormed", "Order not formed" },
                 { "ResourceAmount", "Amount of {0} {1} units" },
@@ -72,12 +93,26 @@ namespace CoffeeMat.Classes
                 { "GiveChange", "Your Change:" },
                 { "NotEnoughResource", "Not Enough {0}" },
                 { "StorageIsFull", "Storage of {0} is full" },
+                { "AdditionError", "Error with addition to base" },
+                { "OutOfSymbolsError", "Name should be less than 50 symbols"},
+                { "Success", "Success" },
+                { "Add", "Add"},
+                { "AddPicture", "AddPicture"},
+                { "Name", "Name" },
+                { "Receipt", "Receipt" },
+                { "ExecuteOrder", "Execute order" },
+                { "LocalesButton", "Change locales" },
+                { "CoffeeMachineButton", "Coffee machine start" },
+                { "CoffeeChangeButton", "Coffee change manager" },
+                { "ConsoleButton", "Console" },
+                { "OrderListButton", "Order list" },
+                { "AddToOrderExtrasQuestion", "Do you want some adds to coffee?" },
 
                 { "water", "Water" },
                 { "milk", "Milk" },
                 { "sugar", "Sugar" },
-                { "plasticCups", "Plastic Cups" },
-                { "blendedCoffee", "Blended Coffee" },
+                { "plasticCups", "Cups" },
+                { "blendedCoffee", "Coffee" },
 
                 { "LocalesCommandDescription", "Change current locales" },
                 { "AddInCoffeeCommandDescription", "Add extras to coffee" },

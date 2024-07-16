@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.ResourcePictureBox = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.AmountLabel = new System.Windows.Forms.Label();
             this.ResourceNameBox = new System.Windows.Forms.TextBox();
             this.ResourceAmountBox = new System.Windows.Forms.NumericUpDown();
-            this.AddResourceButton = new System.Windows.Forms.Button();
+            this.AddResourceItemButton = new System.Windows.Forms.Button();
             this.ResourcePictureAddDialog = new System.Windows.Forms.OpenFileDialog();
             this.AddPictureButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ResourcePictureBox)).BeginInit();
@@ -48,23 +48,23 @@
             this.ResourcePictureBox.TabIndex = 0;
             this.ResourcePictureBox.TabStop = false;
             // 
-            // label1
+            // NameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(233, 199);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Название";
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(233, 199);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(83, 20);
+            this.NameLabel.TabIndex = 1;
+            this.NameLabel.Text = "Название";
             // 
-            // label2
+            // AmountLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(216, 239);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Количество";
+            this.AmountLabel.AutoSize = true;
+            this.AmountLabel.Location = new System.Drawing.Point(216, 239);
+            this.AmountLabel.Name = "AmountLabel";
+            this.AmountLabel.Size = new System.Drawing.Size(100, 20);
+            this.AmountLabel.TabIndex = 2;
+            this.AmountLabel.Text = "Количество";
             // 
             // ResourceNameBox
             // 
@@ -81,15 +81,15 @@
             this.ResourceAmountBox.Size = new System.Drawing.Size(141, 26);
             this.ResourceAmountBox.TabIndex = 4;
             // 
-            // AddResourceButton
+            // AddResourceItemButton
             // 
-            this.AddResourceButton.Location = new System.Drawing.Point(322, 271);
-            this.AddResourceButton.Name = "AddResourceButton";
-            this.AddResourceButton.Size = new System.Drawing.Size(141, 44);
-            this.AddResourceButton.TabIndex = 5;
-            this.AddResourceButton.Text = "Добавить";
-            this.AddResourceButton.UseVisualStyleBackColor = true;
-            this.AddResourceButton.Click += new System.EventHandler(this.AddResourceButton_Click);
+            this.AddResourceItemButton.Location = new System.Drawing.Point(322, 271);
+            this.AddResourceItemButton.Name = "AddResourceItemButton";
+            this.AddResourceItemButton.Size = new System.Drawing.Size(141, 44);
+            this.AddResourceItemButton.TabIndex = 5;
+            this.AddResourceItemButton.Text = "Добавить";
+            this.AddResourceItemButton.UseVisualStyleBackColor = true;
+            this.AddResourceItemButton.Click += new System.EventHandler(this.AddResourceButton_Click);
             // 
             // ResourcePictureAddDialog
             // 
@@ -111,11 +111,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.AddPictureButton);
-            this.Controls.Add(this.AddResourceButton);
+            this.Controls.Add(this.AddResourceItemButton);
             this.Controls.Add(this.ResourceAmountBox);
             this.Controls.Add(this.ResourceNameBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.AmountLabel);
+            this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.ResourcePictureBox);
             this.Name = "AddResourceForm";
             this.Text = "AddResourceForm";
@@ -129,11 +129,11 @@
         #endregion
 
         private System.Windows.Forms.PictureBox ResourcePictureBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.Label AmountLabel;
         private System.Windows.Forms.TextBox ResourceNameBox;
         private System.Windows.Forms.NumericUpDown ResourceAmountBox;
-        private System.Windows.Forms.Button AddResourceButton;
+        private System.Windows.Forms.Button AddResourceItemButton;
         private System.Windows.Forms.OpenFileDialog ResourcePictureAddDialog;
         private System.Windows.Forms.Button AddPictureButton;
     }

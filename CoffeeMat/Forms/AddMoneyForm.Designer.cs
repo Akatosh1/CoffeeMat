@@ -31,12 +31,13 @@
             this.MoneyPictureBox = new System.Windows.Forms.PictureBox();
             this.AddPictureButton = new System.Windows.Forms.Button();
             this.MoneyNameBox = new System.Windows.Forms.TextBox();
-            this.AmountBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
             this.AmountLabel = new System.Windows.Forms.Label();
-            this.AddMoneyExampleButton = new System.Windows.Forms.Button();
+            this.AddMoneyItemButton = new System.Windows.Forms.Button();
             this.MoneyPictureAddDialog = new System.Windows.Forms.OpenFileDialog();
+            this.AmountNumeric = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.MoneyPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AmountNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // MoneyPictureBox
@@ -65,14 +66,6 @@
             this.MoneyNameBox.TabIndex = 2;
             this.MoneyNameBox.TextChanged += new System.EventHandler(this.MoneyNameBox_TextChanged);
             // 
-            // AmountBox
-            // 
-            this.AmountBox.Location = new System.Drawing.Point(295, 258);
-            this.AmountBox.Name = "AmountBox";
-            this.AmountBox.Size = new System.Drawing.Size(160, 26);
-            this.AmountBox.TabIndex = 3;
-            this.AmountBox.TextChanged += new System.EventHandler(this.AmountBox_TextChanged);
-            // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
@@ -91,35 +84,43 @@
             this.AmountLabel.TabIndex = 5;
             this.AmountLabel.Text = "Ценность";
             // 
-            // AddMoneyExampleButton
+            // AddMoneyItemButton
             // 
-            this.AddMoneyExampleButton.Location = new System.Drawing.Point(323, 290);
-            this.AddMoneyExampleButton.Name = "AddMoneyExampleButton";
-            this.AddMoneyExampleButton.Size = new System.Drawing.Size(94, 27);
-            this.AddMoneyExampleButton.TabIndex = 6;
-            this.AddMoneyExampleButton.Text = "Добавить";
-            this.AddMoneyExampleButton.UseVisualStyleBackColor = true;
-            this.AddMoneyExampleButton.Click += new System.EventHandler(this.AddMoneyExampleButton_Click);
+            this.AddMoneyItemButton.Location = new System.Drawing.Point(295, 290);
+            this.AddMoneyItemButton.Name = "AddMoneyItemButton";
+            this.AddMoneyItemButton.Size = new System.Drawing.Size(160, 35);
+            this.AddMoneyItemButton.TabIndex = 6;
+            this.AddMoneyItemButton.Text = "Добавить";
+            this.AddMoneyItemButton.UseVisualStyleBackColor = true;
+            this.AddMoneyItemButton.Click += new System.EventHandler(this.AddMoneyExampleButton_Click);
             // 
             // MoneyPictureAddDialog
             // 
             this.MoneyPictureAddDialog.FileName = "openFileDialog1";
+            // 
+            // AmountNumeric
+            // 
+            this.AmountNumeric.Location = new System.Drawing.Point(295, 261);
+            this.AmountNumeric.Name = "AmountNumeric";
+            this.AmountNumeric.Size = new System.Drawing.Size(160, 26);
+            this.AmountNumeric.TabIndex = 7;
             // 
             // AddMoneyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.AddMoneyExampleButton);
+            this.Controls.Add(this.AmountNumeric);
+            this.Controls.Add(this.AddMoneyItemButton);
             this.Controls.Add(this.AmountLabel);
             this.Controls.Add(this.NameLabel);
-            this.Controls.Add(this.AmountBox);
             this.Controls.Add(this.MoneyNameBox);
             this.Controls.Add(this.AddPictureButton);
             this.Controls.Add(this.MoneyPictureBox);
             this.Name = "AddMoneyForm";
             this.Text = "AddMoneyForm";
             ((System.ComponentModel.ISupportInitialize)(this.MoneyPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AmountNumeric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,10 +131,10 @@
         private System.Windows.Forms.PictureBox MoneyPictureBox;
         private System.Windows.Forms.Button AddPictureButton;
         private System.Windows.Forms.TextBox MoneyNameBox;
-        private System.Windows.Forms.TextBox AmountBox;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label AmountLabel;
-        private System.Windows.Forms.Button AddMoneyExampleButton;
+        private System.Windows.Forms.Button AddMoneyItemButton;
         private System.Windows.Forms.OpenFileDialog MoneyPictureAddDialog;
+        private System.Windows.Forms.NumericUpDown AmountNumeric;
     }
 }

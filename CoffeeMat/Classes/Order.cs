@@ -27,11 +27,11 @@ namespace CoffeeMat
         public static string CreateOrderString()
         {
             return string.Format("{0} {1} {2}",
-                string.Format(Locales.phrases[Locales.CurrentLocale]["Order"], Coffee.Name), 
+                string.Format(Locales.GetLocales("Order"), Coffee.Name), 
                 ExtraSugarAmount > 0 ? 
-                string.Format(Locales.phrases[Locales.CurrentLocale]["ExtraSugar"], ExtraSugarAmount) : "",
+                string.Format(Locales.GetLocales("ExtraSugar"), ExtraSugarAmount) : "",
                 ExtraMilkAmount > 0 ? 
-                string.Format(Locales.phrases[Locales.CurrentLocale]["ExtraMilk"], ExtraMilkAmount) : "");
+                string.Format(Locales.GetLocales("ExtraMilk"), ExtraMilkAmount) : "");
         }
 
         public static void Clear()
@@ -76,7 +76,7 @@ namespace CoffeeMat
             Order.Clear();
 
             if(CoffeeMachineBalance > 0)  
-                stringBuilder.AppendLine(Locales.phrases[Locales.CurrentLocale]["GiveChange"]);
+                stringBuilder.AppendLine(Locales.GetLocales("GiveChange"));
 
             while (list.Count > 0 && Order.CoffeeMachineBalance > 0) 
             {
@@ -86,7 +86,7 @@ namespace CoffeeMat
                     Order.CoffeeMachineBalance -= higherElement;
                     stringBuilder.Append(higherElement.ToString());
                     stringBuilder.Append(" ");
-                    stringBuilder.AppendLine(Locales.phrases[Locales.CurrentLocale]["Rubles"]);
+                    stringBuilder.AppendLine(Locales.GetLocales("Rubles"));
                 }
                 else list.RemoveAt(0);
             }

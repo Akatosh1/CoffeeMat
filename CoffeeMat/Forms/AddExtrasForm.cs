@@ -25,7 +25,7 @@ namespace CoffeeMat.Forms
             SugarButton.BackgroundImageLayout = ImageLayout.Stretch;
             MilkButton.BackgroundImage = databaseDao.GetImageFromSql("milk", "resource");
             MilkButton.BackgroundImageLayout = ImageLayout.Stretch;
-            AcceptButton.Text = "Оформить заказ";
+            AcceptButton.Text = Locales.GetLocales("ExecuteOrder");
 
 
             SugarButton.Click += (sender, EventArgs) =>

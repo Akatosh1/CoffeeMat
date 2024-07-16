@@ -24,12 +24,5 @@ namespace CoffeeMat.Classes
 
             return dataBaseDao.UpdateItemOnDataBase(this, "money");
         }
-
-        public byte[] ImageToByteArray(Image image)
-        {
-            MemoryStream ms = new MemoryStream();
-            image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-            return ms.ToArray();
-        }
     }
 }

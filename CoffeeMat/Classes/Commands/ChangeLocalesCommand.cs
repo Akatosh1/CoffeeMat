@@ -10,15 +10,15 @@ namespace CoffeeMat.Classes.Commands
     {
         public string Execute(string[] args)
         {
-            if (args != null) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+            if (args != null) return Locales.GetLocales("IncorrectRequest");
             if (Locales.CurrentLocale == "rus") Locales.CurrentLocale = "eng";
             else Locales.CurrentLocale = "rus";
-            return Locales.phrases[Locales.CurrentLocale]["ChangeLocales"];         
+            return Locales.GetLocales("ChangeLocales");         
         }
 
         public string GetDescription()
         {
-            return Locales.phrases[Locales.CurrentLocale]["LocalesCommandDescription"];
+            return Locales.GetLocales("LocalesCommandDescription");
         }
     }
 }

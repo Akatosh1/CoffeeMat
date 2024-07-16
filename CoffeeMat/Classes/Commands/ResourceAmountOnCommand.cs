@@ -11,14 +11,14 @@ namespace CoffeeMat.Classes.Commands
     {
         public string Execute(string[] args)
         {
-            if (args == null) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+            if (args == null) return Locales.GetLocales("IncorrectRequest");
             var dataBaseDao = new DataBaseDao();
-            return (args != null) ? dataBaseDao.FindResourceAmount(args[0]) : Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+            return (args != null) ? dataBaseDao.FindResourceAmount(args[0]) : Locales.GetLocales("IncorrectRequest");
         }
 
         public string GetDescription()
         {
-            return Locales.phrases[Locales.CurrentLocale]["ResourceAmountOnCommandDescription"];
+            return Locales.GetLocales("ResourceAmountOnCommandDescription");
         }
     }
 }

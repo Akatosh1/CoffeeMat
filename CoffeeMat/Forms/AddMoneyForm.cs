@@ -9,6 +9,10 @@ namespace CoffeeMat.Forms
         public AddMoneyForm()
         {
             InitializeComponent();
+            AddPictureButton.Text = Locales.GetLocales("AddPicture");
+            AddMoneyItemButton.Text = Locales.GetLocales("Add");
+            NameLabel.Text = Locales.GetLocales("Name");
+            AmountLabel.Text = Locales.GetLocales("Price");
         }
 
         private void AddPictureButton_Click(object sender, EventArgs e)
@@ -24,38 +28,30 @@ namespace CoffeeMat.Forms
         private void AddMoneyExampleButton_Click(object sender, EventArgs e)
         {
             var moneyDB = new Money(MoneyNameBox.Text,
-                int.Parse(AmountBox.Text),
+                Convert.ToInt32(AmountNumeric),
                 MoneyPictureBox.Image);
 
             if (moneyDB.AddToBase())
             {
-                MessageBox.Show("Успешно");
+                MessageBox.Show(Locales.GetLocales("Success"));
                 AddMoneyForm form1 = new AddMoneyForm();
                 this.Hide();
                 form1.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Неудача");
+                MessageBox.Show(Locales.GetLocales("AdditionError"));
             }
         }
 
         private void MoneyNameBox_TextChanged(object sender, EventArgs e)
         {
-            if (MoneyNameBox.Text.Length > 20)
+            if (MoneyNameBox.Text.Length > 50)
             {
-                MessageBox.Show("Название должно быть короче 20 символов");
+                MessageBox.Show(Locales.GetLocales("OutOfSymbolsError"));
                 MoneyNameBox.Text = "";
             }
         }
 
-        private void AmountBox_TextChanged(object sender, EventArgs e)
-        {
-            if (!int.TryParse(AmountBox.Text, out int amount))
-            {
-                MessageBox.Show("Ценность должна быть целым числом");
-                AmountBox.Text = "";
-            }
-        }
     }
 }

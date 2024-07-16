@@ -10,7 +10,7 @@ namespace CoffeeMat.Classes.Commands
     {
         public string Execute(string[] args)
         {
-            if (Order.Coffee == null) return Locales.phrases[Locales.CurrentLocale]["OrderNotFormed"];
+            if (Order.Coffee == null) return Locales.GetLocales("OrderNotFormed");
             var dataBaseDao = new DataBaseDao();
 
             var resources = new Dictionary<string, int>() {
@@ -36,14 +36,14 @@ namespace CoffeeMat.Classes.Commands
 
             }
             return string.Format(
-                Locales.phrases[Locales.CurrentLocale]["NotEnoughMoney"],
+                Locales.GetLocales("NotEnoughMoney"),
                 -difference,
-                Locales.phrases[Locales.CurrentLocale]["Rubles"]);
+                Locales.GetLocales("Rubles"));
         }
 
         public string GetDescription()
         {
-            return Locales.phrases[Locales.CurrentLocale]["ExecuteCommandDescription"];
+            return Locales.GetLocales("ExecuteCommandDescription");
         }
     }
 }

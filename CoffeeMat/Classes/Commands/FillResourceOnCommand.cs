@@ -12,8 +12,8 @@ namespace CoffeeMat.Classes.Commands
     {
         public string Execute(string[] args)
         {
-            if (args == null) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
-            if (!int.TryParse(args[1], out int amount)) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+            if (args == null) return Locales.GetLocales("IncorrectRequest");
+            if (!int.TryParse(args[1], out int amount)) return Locales.GetLocales("IncorrectRequest");
             var dataBaseDao = new DataBaseDao();
 
             var checkString = dataBaseDao.CheckResource(args[0], amount);
@@ -25,7 +25,7 @@ namespace CoffeeMat.Classes.Commands
 
         public string GetDescription()
         {
-            return Locales.phrases[Locales.CurrentLocale]["FillResourceCommandDescription"];
+            return Locales.GetLocales("FillResourceCommandDescription");
         }
     }
 }

@@ -15,9 +15,9 @@ namespace CoffeeMat.Forms
 
         private void CreateColumns()
         {
-            PurchaseGridView.Columns.Add("name", "имя");
-            PurchaseGridView.Columns.Add("price", "цена");
-            PurchaseGridView.Columns.Add("picture", "картинка");
+            PurchaseGridView.Columns.Add("name", Locales.GetLocales("Name"));
+            PurchaseGridView.Columns.Add("price", Locales.GetLocales("Price"));
+            PurchaseGridView.Columns.Add("picture", Locales.GetLocales("Picture"));
         }
 
         private void RefreshPage()

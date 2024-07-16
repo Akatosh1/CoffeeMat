@@ -31,13 +31,18 @@ namespace CoffeeMat
 
         private void AddButtons()
         {
-            var controls = new Dictionary<string, EventHandler>();
-            controls.Add("Поменять локализацию", ChangeLocalesButton_Click);
-            controls.Add("Запуск кофе машины", CoffeeMachineButton_Click);
-            controls.Add("Редактирование видов кофе", CoffeeFormattingButton_Click);
-            controls.Add("Работа с консолью", ConsoleButton_Click);
-            controls.Add("Список заказов", ShowOrdersButton_click);
             startTableLayout.Controls.Clear();
+            startTableLayout.RowStyles.Clear();
+
+            var controls = new Dictionary<string, EventHandler>
+            {
+                { Locales.GetLocales("LocalesButton"), ChangeLocalesButton_Click },
+                { Locales.GetLocales("CoffeeMachineButton"), CoffeeMachineButton_Click },
+                { Locales.GetLocales("CoffeeChangeButton"), CoffeeFormattingButton_Click },
+                { Locales.GetLocales("ConsoleButton"), ConsoleButton_Click },
+                { Locales.GetLocales("OrderListButton"), ShowOrdersButton_click }
+            };
+
 
             foreach (var control in controls.Keys)
             {
@@ -61,6 +66,7 @@ namespace CoffeeMat
         private void ChangeLocalesButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show(new ChangeLocalesCommand().Execute(null));
+            AddButtons();
         }
 
         private void ShowOrdersButton_click(object sender, EventArgs e)

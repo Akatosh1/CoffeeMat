@@ -1,13 +1,6 @@
 ﻿using CoffeeMat.Classes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CoffeeMat
@@ -25,12 +18,12 @@ namespace CoffeeMat
 
         private void CreateColumns()
         {
-            CoffeeGridView.Columns.Add("name", "имя");
-            CoffeeGridView.Columns.Add("price", "цена");
-            CoffeeGridView.Columns.Add("picture", "картинка");
-            CoffeeGridView.Columns.Add("coffee", "кофе");
-            CoffeeGridView.Columns.Add("water", "вода");
-            CoffeeGridView.Columns.Add("milk", "молоко");
+            CoffeeGridView.Columns.Add("name", Locales.GetLocales("Name"));
+            CoffeeGridView.Columns.Add("price", Locales.GetLocales("Price"));
+            CoffeeGridView.Columns.Add("picture", Locales.GetLocales("Picture"));
+            CoffeeGridView.Columns.Add("coffee", Locales.GetLocales("blendedCoffee"));
+            CoffeeGridView.Columns.Add("water", Locales.GetLocales("water"));
+            CoffeeGridView.Columns.Add("milk", Locales.GetLocales("milk"));
         }
 
         private void RefreshPage()
@@ -38,7 +31,7 @@ namespace CoffeeMat
             CoffeeGridView.Rows.Clear();
            
 
-            foreach (Coffee coffee in dataBaseDao.GetSqlTableList("coffee"))
+            foreach (Coffee coffee in dataBaseDao.GetSqlTableList("coffee").Cast<Coffee>())
             {
                 CoffeeGridView.Rows.Add(
                 coffee.Name,
@@ -52,10 +45,12 @@ namespace CoffeeMat
 
         private void NewCoffeeButton_Click(object sender, EventArgs e)
         {
-            var form = new AddCoffeeForm();
-            form.Location = this.Location;
-            form.Size = this.Size;
-            form.StartPosition = FormStartPosition.Manual;
+            var form = new AddCoffeeForm
+            {
+                Location = this.Location,
+                Size = this.Size,
+                StartPosition = FormStartPosition.Manual
+            };
             form.FormClosing += delegate { this.Show(); };
             form.Show();
             this.Hide();

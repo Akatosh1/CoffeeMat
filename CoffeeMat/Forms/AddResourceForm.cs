@@ -1,6 +1,7 @@
 ﻿using CoffeeMat.Classes;
 using System;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace CoffeeMat.Forms
 {
@@ -9,6 +10,10 @@ namespace CoffeeMat.Forms
         public AddResourceForm()
         {
             InitializeComponent();
+            AddPictureButton.Text = Locales.GetLocales("AddPicture");
+            AddResourceItemButton.Text = Locales.GetLocales("Add");
+            NameLabel.Text = Locales.GetLocales("Name");
+            AmountLabel.Text = Locales.GetLocales("Price");
         }
 
         private void AddResourceButton_Click(object sender, EventArgs e)
@@ -19,22 +24,22 @@ namespace CoffeeMat.Forms
 
             if (resourceDB.AddToBase())
             {
-                MessageBox.Show("Успешно");
+                MessageBox.Show(Locales.GetLocales("Success"));
                 AddResourceForm form1 = new AddResourceForm();
                 this.Hide();
                 form1.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Неудача");
+                MessageBox.Show(Locales.GetLocales("AdditionError"));
             }
         }
 
         private void ResourceNameBox_TextChanged(object sender, EventArgs e)
         {
-            if (ResourceNameBox.Text.Length > 20)
+            if (ResourceNameBox.Text.Length > 50)
             {
-                MessageBox.Show("Название должно быть короче 20 символов");
+                MessageBox.Show(Locales.GetLocales("OutOfSymbolsError"));
                 ResourceNameBox.Text = "";
             }
         }

@@ -33,10 +33,10 @@ namespace CoffeeMat
                 var button = CreateSingleButton(coffee.Picture);
 
                 button.Text = coffee.Name +
-                    Locales.phrases[Locales.CurrentLocale]["Price"] +
+                    Locales.GetLocales("Price") +
                     coffee.Amount.ToString() +
                     " " +
-                    Locales.phrases[Locales.CurrentLocale]["Rubles"];
+                    Locales.GetLocales("Rubles");
                 button.Click += (sender, EventArgs) =>
                 { CoffeeItemClick(sender, EventArgs, coffee.Name); };
                 CoffeeTablePanel.Controls.Add(button);
@@ -52,7 +52,7 @@ namespace CoffeeMat
             {
                 MoneyTablePanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
                 var button = CreateSingleButton(money.Picture);
-                button.Text = money.Amount + " " + Locales.phrases[Locales.CurrentLocale]["Rubles"];
+                button.Text = money.Amount + " " + Locales.GetLocales("Rubles");
                 button.Click  += (sender,EventArgs) => 
                 { MoneyItemClick(sender, EventArgs, money.Amount.ToString()); };
                 MoneyTablePanel.Controls.Add(button);             
@@ -81,15 +81,15 @@ namespace CoffeeMat
             if (Order.CoffeeMachineBalance < coffee.Amount)
             {
                 var message = string.Format(
-                    Locales.phrases[Locales.CurrentLocale]["NotEnoughMoney"], 
+                    Locales.GetLocales("NotEnoughMoney"), 
                     coffee.Amount  - Order.CoffeeMachineBalance,
-                    Locales.phrases[Locales.CurrentLocale]["Rubles"]);
+                    Locales.GetLocales("Rubles"));
                 MessageBox.Show(message);
             }
             else
             {
                 Order.Coffee = coffee;
-                DialogResult dialogResult = MessageBox.Show("Желаете добавить что-то к заказу?", "Выбор", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show(Locales.GetLocales("AddToOrderExtrasQuestion"), "", MessageBoxButtons.YesNo);
                 switch (dialogResult)
                 {
                     case DialogResult.Yes:

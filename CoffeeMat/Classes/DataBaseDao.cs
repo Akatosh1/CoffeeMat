@@ -22,7 +22,7 @@ namespace CoffeeMat.Classes
 
             SqlDataReader reader = amountCommand.ExecuteReader();
 
-            if (!reader.Read()) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+            if (!reader.Read()) return Locales.GetLocales("IncorrectRequest");
 
             var amount = reader.GetInt32(2) + addedResourceAmount;
             var isLower = amount < reader.GetInt32(4);
@@ -31,9 +31,9 @@ namespace CoffeeMat.Classes
             reader.Close();
             dataBase.CloseConnection();
 
-            if (isLower) return string.Format(Locales.phrases[Locales.CurrentLocale]["NotEnoughResource"],
+            if (isLower) return string.Format(Locales.GetLocales("NotEnoughResource"),
                     Locales.phrases[Locales.CurrentLocale][resourceName]);
-            if (isUpper) return string.Format(Locales.phrases[Locales.CurrentLocale]["StorageIsFull"],
+            if (isUpper) return string.Format(Locales.GetLocales("StorageIsFull"),
                     Locales.phrases[Locales.CurrentLocale][resourceName]);
             else return "";
         }
@@ -48,14 +48,14 @@ namespace CoffeeMat.Classes
             dataBase.OpenConnection();
 
             SqlDataReader reader = amountCommand.ExecuteReader();
-            if(!reader.Read()) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+            if(!reader.Read()) return Locales.GetLocales("IncorrectRequest");
             var amount = reader.GetInt32(2);
 
             reader.Close(); 
             dataBase.CloseConnection();
 
             return string.Format(
-                Locales.phrases[Locales.CurrentLocale]["ResourceAmount"],
+                Locales.GetLocales("ResourceAmount"),
                 resourceName,
                 amount);
         }
@@ -172,7 +172,7 @@ namespace CoffeeMat.Classes
                 var oldAmount = reader.GetInt32(2);
                 var newAmount = oldAmount + resourceChangeAmount;
                 reader.Close();
-                if (newAmount < 0) return string.Format(Locales.phrases[Locales.CurrentLocale]["OutOfResource"], resourceName);
+                if (newAmount < 0) return string.Format(Locales.GetLocales("OutOfResource"), resourceName);
                 dataBase.CloseConnection();
 
                 if (Order.Coffee != null)
@@ -187,9 +187,9 @@ namespace CoffeeMat.Classes
                     }
                     return Order.CreateOrderString();
                 }
-                else return Locales.phrases[Locales.CurrentLocale]["OrderNotFormed"];
+                else return Locales.GetLocales("OrderNotFormed");
             }
-            else return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+            else return Locales.GetLocales("IncorrectRequest");
         }
         public string UpdateResourceOnStorage(string resourceName, int resourceChangeAmount)
         {
@@ -209,18 +209,18 @@ namespace CoffeeMat.Classes
                 var oldAmount = reader.GetInt32(2);
                 var newAmount = oldAmount + resourceChangeAmount;
                 reader.Close();
-                if (newAmount < 0) return string.Format(Locales.phrases[Locales.CurrentLocale]["OutOfResource"], resourceName);
-                if (command.ExecuteNonQuery() == 0) return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+                if (newAmount < 0) return string.Format(Locales.GetLocales("OutOfResource"), resourceName);
+                if (command.ExecuteNonQuery() == 0) return Locales.GetLocales("IncorrectRequest");
                 dataBase.CloseConnection();
 
                 if (Order.Coffee == null) return string.Format(
-                    Locales.phrases[Locales.CurrentLocale]["ResourceAmount"],
+                    Locales.GetLocales("ResourceAmount"),
                     resourceName,
                     newAmount);
-                 else return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+                 else return Locales.GetLocales("IncorrectRequest");
 
             }
-            else return Locales.phrases[Locales.CurrentLocale]["IncorrectRequest"];
+            else return Locales.GetLocales("IncorrectRequest") ;
         }
 
         public bool UpdateItemOnDataBase(IItem item, string tableName)
