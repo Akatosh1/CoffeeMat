@@ -7,7 +7,7 @@ using System.IO;
 namespace CoffeeMat.Classes
 {
     // Класс отвечает за взаимодействие с бд
-    internal class DataBaseDao
+    public class DataBaseDao
     {
         readonly Database dataBase = new Database();
 

@@ -2,7 +2,7 @@
 
 namespace CoffeeMat.Classes
 {
-    internal interface IItem   {
+    public interface IItem   {
         string Name { get; set; }
         int Amount { get; set; }
         Image Picture { get; set; }

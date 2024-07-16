@@ -7,7 +7,7 @@ using System.Text;
 
 namespace CoffeeMat
 {
-    internal static class Order
+    public static class Order
     {
         public static Coffee Coffee = null;
         public static int CoffeeMachineBalance = 0;

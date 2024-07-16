@@ -2,7 +2,7 @@
 
 namespace CoffeeMat.Classes
 {
-    internal class Money: IItem
+    public class Money: IItem
     {
         public string Name { get; set; }
         public int Amount { get; set; }

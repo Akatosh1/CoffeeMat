@@ -11,6 +11,7 @@ namespace CoffeeMat.Classes
         {
             return Locales.phrases[Locales.CurrentLocale][value];
         }
+
         public static Dictionary<string,string> CreateRusLocales()
         {
             var rusDictionary = new Dictionary<string, string>

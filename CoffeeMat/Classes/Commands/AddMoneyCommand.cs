@@ -1,6 +1,6 @@
 ﻿namespace CoffeeMat.Classes.Commands
 {
-    internal class AddMoneyCommand : ICommand
+    public class AddMoneyCommand : ICommand
     {
         public string Execute(string[] args)
         {

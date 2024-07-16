@@ -1,6 +1,6 @@
 ﻿namespace CoffeeMat.Classes.Commands
 {
-    internal class ChangeLocalesCommand : ICommand
+    public class ChangeLocalesCommand : ICommand
     {
         public string Execute(string[] args)
         {

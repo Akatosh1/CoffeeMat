@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace CoffeeMat.Classes
 {
-    internal class CoffeeConsoleManager
+    public class CoffeeConsoleManager
     {
         public static Dictionary<String, ICommand> commands = new Dictionary<String, ICommand>();
 

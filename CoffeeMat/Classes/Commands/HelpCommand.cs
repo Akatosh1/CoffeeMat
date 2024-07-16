@@ -3,7 +3,7 @@ using System.Text;
 
 namespace CoffeeMat.Classes.Commands
 {
-    internal class HelpCommand : ICommand
+    public class HelpCommand : ICommand
     {
         public string Execute(string[] args)
         {

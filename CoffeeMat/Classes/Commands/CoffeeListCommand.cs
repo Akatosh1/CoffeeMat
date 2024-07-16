@@ -2,7 +2,7 @@
 
 namespace CoffeeMat.Classes.Commands
 {
-    internal class CoffeeListCommand : ICommand
+    public class CoffeeListCommand : ICommand
     {
         public string Execute(string[] args)
         {

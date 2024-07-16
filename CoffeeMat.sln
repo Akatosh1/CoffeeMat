@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeMat", "CoffeeMat\CoffeeMat.csproj", "{04BF62D3-6960-4A17-A926-47E739671C86}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{A8DDDF1C-633F-4850-9E4F-7AEB8203FB66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{04BF62D3-6960-4A17-A926-47E739671C86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04BF62D3-6960-4A17-A926-47E739671C86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04BF62D3-6960-4A17-A926-47E739671C86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8DDDF1C-633F-4850-9E4F-7AEB8203FB66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8DDDF1C-633F-4850-9E4F-7AEB8203FB66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8DDDF1C-633F-4850-9E4F-7AEB8203FB66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8DDDF1C-633F-4850-9E4F-7AEB8203FB66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

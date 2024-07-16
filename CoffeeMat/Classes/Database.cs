@@ -2,7 +2,7 @@
 
 namespace CoffeeMat
 {
-    internal class Database
+    public class Database
     {
         public static string connec = Properties.Settings.Default.Database1ConnectionString;
         readonly SqlConnection sqlConnection = new SqlConnection(connec);

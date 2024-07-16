@@ -1,6 +1,6 @@
 ﻿namespace CoffeeMat.Classes.Commands
 {
-    internal interface ICommand
+    public interface ICommand
     {
         string GetDescription();
 

@@ -29,7 +29,9 @@ namespace CoffeeMat
                 var button = CreateSingleButton(coffee.Picture);
 
                 button.Text = coffee.Name +
+                    " " +
                     Locales.GetLocales("Price") +
+                    ":" +
                     coffee.Amount.ToString() +
                     " " +
                     Locales.GetLocales("Rubles");

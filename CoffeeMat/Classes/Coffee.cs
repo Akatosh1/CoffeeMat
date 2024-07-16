@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace CoffeeMat
 {
-    internal class Coffee : IItem
+    public class Coffee : IItem
     {
         public string Name { get; set; }
         public int Amount { get; set; }

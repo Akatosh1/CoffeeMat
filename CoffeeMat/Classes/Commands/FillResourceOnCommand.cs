@@ -1,6 +1,6 @@
 ﻿namespace CoffeeMat.Classes.Commands
 {
-    internal class FillResourceOnCommand : ICommand
+    public class FillResourceOnCommand : ICommand
     {
         public string Execute(string[] args)
         {
