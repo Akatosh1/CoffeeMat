@@ -50,13 +50,11 @@ ICommand - интерфейс для классов, реализующих ко
 Примеры работы программы:
 
 Пример 1: <br />
-![example1](https://github.com/user-attachments/assets/a742971b-4c05-4bbd-a13a-ecfc527025ad) <br />
-![Example2](https://github.com/user-attachments/assets/8816ba90-1570-4486-88d7-9f18eef6f65b) <br />
+![image](https://github.com/user-attachments/assets/3f14286b-d096-4a82-8d6f-feaa53c4087b) <br />
+![image](https://github.com/user-attachments/assets/9a74983e-f313-46bc-a61d-894a56a7c791) <br />
+![image](https://github.com/user-attachments/assets/053034f0-4bcb-4535-8b35-a698d040aa06) <br />
 
-Пример 2: <br />
-![example3](https://github.com/user-attachments/assets/441231a3-25e6-4d88-ae41-4e4e97d2c6cd) <br />
-
-Пример 3(манипуляции с ресурсами): <br />
+Пример 2(манипуляции с ресурсами): <br />
 ![image](https://github.com/user-attachments/assets/6b653f85-1830-4763-bb4d-731365122fda) <br />
 
 
